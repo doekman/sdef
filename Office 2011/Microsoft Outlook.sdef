@@ -176,7 +176,7 @@
 			<property name="class" code="pcls" description="The class of the object." type="type" access="r">
 				<cocoa key="classCode"/>
 			</property>
-			<property name="properties" code="pALL" description="All of the object&apos;s properties." type="record">
+			<property name="properties" code="pALL" description="All of the object's properties." type="record">
 				<cocoa key="scriptingProperties"/>
 			</property>
 			<!--
@@ -236,7 +236,7 @@
 			<property name="miniaturized" code="pmnd" description="Whether the window is currently miniaturized." type="boolean">
 				<cocoa key="isMiniaturized"/>
 			</property>
-			<property name="modal" code="pmod" description="Whether the window is the application&apos;s current modal window." type="boolean" access="r">
+			<property name="modal" code="pmod" description="Whether the window is the application's current modal window." type="boolean" access="r">
 				<cocoa key="isModalPanel"/>
 			</property>
 			<property name="resizable" code="prsz" description="Whether the window can be resized." type="boolean" access="r">
@@ -359,7 +359,7 @@
 			</parameter>
 		</command>
 		<!-- "set" is supposed to be hidden. -->
-		<command name="set" code="coresetd" description="Set an object&apos;s data.">
+		<command name="set" code="coresetd" description="Set an object's data.">
 			<cocoa class="NSSetCommand"/>
 			<direct-parameter type="specifier"/>
 			<!-- "set" is supposed to return the fully evaluated "to" data.
@@ -393,7 +393,7 @@
 				<cocoa integer-value="1"/>
 			</enumerator>
 		</enumeration>
-		<enumeration name="main window view" code="eMWV" description="The different view&apos;s that Outlook&apos;s main window can be in.">
+		<enumeration name="main window view" code="eMWV" description="The different view's that Outlook's main window can be in.">
 			<enumerator name="mail view" code="MaVw" description="Look at all mails.">
 				<cocoa integer-value="0"/>
 			</enumerator>
@@ -577,14 +577,14 @@
 			<enumerator name="reduced functionality never activated" code="pRFM" description="Outlook has never been activated. Online access is not allowed">
 				<cocoa integer-value="2"/>
 			</enumerator>
-			<enumerator name="reduced functionality deactivated" code="pRFD" description="Outlook&apos;s license is expired or inactive. Online access is not allowed">
+			<enumerator name="reduced functionality deactivated" code="pRFD" description="Outlook's license is expired or inactive. Online access is not allowed">
 				<cocoa integer-value="1"/>
 			</enumerator>
 			<enumerator name="offline demo" code="pOFD" description="Outlook is licensed in offline demo mode. Online access is not allowed.">
 				<cocoa integer-value="3"/>
 			</enumerator>
 		</enumeration>
-		<class name="application" code="capp" description="Outlook&apos;s top level scripting object.">
+		<class name="application" code="capp" description="Outlook's top level scripting object.">
 			<cocoa class="CErageCocoaApp"/>
 			<element description="The address books created in Outlook." type="address book"/>
 			<element description="The calendars created in Outlook." type="calendar"/>
@@ -659,7 +659,7 @@
 			<property name="play sound on sync error" code="SnSE" description="Indicates whether to play sound when an error occurs while syncing." type="boolean"/>
 			<property name="play sound on no new messages" code="SnNo" description="Indicates whether to play sound if there are no new messages." type="boolean"/>
 			<property name="play sound on startup" code="SnSt" description="Indicates whether to play sound when Outlook starts up." type="boolean"/>
-			<property name="categorize message from contacts" code="CaMg" description="Indicates whether messages are automatically assigned categories based on the categores of the sender&apos;s contact." type="boolean"/>
+			<property name="categorize message from contacts" code="CaMg" description="Indicates whether messages are automatically assigned categories based on the categores of the sender's contact." type="boolean"/>
 			<property name="show new categories in navigation pane" code="ShCa" description="Indicates whether to automatically show new categories in the navigation pane." type="boolean"/>
 			<property name="mark item as read" code="MkRd" description="Indicates when to mark an item as read." type="mark as read behavior"/>
 			<property name="mark as read preview duration" code="MRTm" description="The number of seconds to preview an item before marking it as read (applicable only when mark item as read is set to mark as read after preview)." type="integer"/>
@@ -704,7 +704,7 @@
 			<property name="activation state" code="pAAS" description="The current product activation state of the application" type="product activation state" access="rw">
 				<cocoa key="productActivationState"/>
 			</property>
-			<property name="default text encoding" code="pDTE" description="The default text encoding to use when creating new draft messages. use 0 for &apos;automatic&apos;.  Use 21 for UTF-8. Other values are not publicly exposed." type="integer">
+			<property name="default text encoding" code="pDTE" description="The default text encoding to use when creating new draft messages. use 0 for 'automatic'.  Use 21 for UTF-8. Other values are not publicly exposed." type="integer">
 				<cocoa key="defaultTextEncoding"/>
 			</property>
 			<responds-to command="open">
@@ -734,7 +734,7 @@
 				<accessor style="range"/>
 				<accessor style="index"/>
 			</element>
-			<property name="view" code="view" description="Main window&apos;s view (mail, calendar, task, etc)." type="main window view"/>
+			<property name="view" code="view" description="Main window's view (mail, calendar, task, etc)." type="main window view"/>
 			<property name="reading pane position" code="ilRP" description="The display position of the reading pane." type="reading pane position">
 				<cocoa key="readingPaneDisplay"/>
 			</property>
@@ -928,10 +928,10 @@
 			<property name="open content" code="pOAo" description="set this to true to open the message in its own window" type="boolean" access="w" in-properties="no">
 				<cocoa key="openContent"/>
 			</property>
-			<property name="followup" code="pOAf" description="set to true to activate the &apos;followup&apos; button in the alert" type="boolean" access="w" in-properties="no">
+			<property name="followup" code="pOAf" description="set to true to activate the 'followup' button in the alert" type="boolean" access="w" in-properties="no">
 				<cocoa key="flagForFollowup"/>
 			</property>
-			<property name="delete content" code="pOAd" description="set to true to activate the &apos;delete&apos; button in the alert" type="boolean" access="w" in-properties="no">
+			<property name="delete content" code="pOAd" description="set to true to activate the 'delete' button in the alert" type="boolean" access="w" in-properties="no">
 				<cocoa key="deleteContent"/>
 			</property>
 		</class>
@@ -1001,10 +1001,10 @@
 			<property name="expanded" code="pnpE" description="Whether the node is currently expanded" type="boolean">
 				<cocoa key="isExpanded"/>
 			</property>
-			<property name="visible" code="pvis" description="Whether the node is currently visible on the screen. Setting this property to true scrolls the item list to make it visible if possible (ie if all of this node&apos;s ancestors are expanded)" type="boolean">
+			<property name="visible" code="pvis" description="Whether the node is currently visible on the screen. Setting this property to true scrolls the item list to make it visible if possible (ie if all of this node's ancestors are expanded)" type="boolean">
 				<cocoa key="isVisible"/>
 			</property>
-			<property name="represented record" code="pILR" description="The record represented by this node, displayed in this node&apos;s row in the item list. Will be missing if this node is a header node" type="object" access="r">
+			<property name="represented record" code="pILR" description="The record represented by this node, displayed in this node's row in the item list. Will be missing if this node is a header node" type="object" access="r">
 				<cocoa key="representedRecord"/>
 			</property>
 			<property name="header name" code="pILh" description="The label for this group header node, if this node represents a group header" type="text" access="r">
@@ -1013,10 +1013,10 @@
 			<property name="unread count" code="UCnt" description="The badged count displayed in this header if it is a header node. 0 if it is not" type="integer" access="r">
 				<cocoa key="unreadCount"/>
 			</property>
-			<property name="selection point x" code="pnPx" description="The x coordinate of the center of the node&apos;s location on screen. Only useful if the node&apos;s row is actually visible on screen (not hidden under collapsed parents our by the scroll view)" type="integer" access="r">
+			<property name="selection point x" code="pnPx" description="The x coordinate of the center of the node's location on screen. Only useful if the node's row is actually visible on screen (not hidden under collapsed parents our by the scroll view)" type="integer" access="r">
 				<cocoa key="nodePointX"/>
 			</property>
-			<property name="selection point y" code="pnPy" description="The y coordinate of the center of the node&apos;s location on screen. Only useful if the node&apos;s row is actually visible on screen (not hidden under collapsed parents our by the scroll view)" type="integer" access="r">
+			<property name="selection point y" code="pnPy" description="The y coordinate of the center of the node's location on screen. Only useful if the node's row is actually visible on screen (not hidden under collapsed parents our by the scroll view)" type="integer" access="r">
 				<cocoa key="nodePointY"/>
 			</property>
 		</class>
@@ -1149,7 +1149,7 @@
 			<element description="The other users folder accounts opened for an exchange account." type="other users folder account">
 				<cocoa key="otherUsersFolders"/>
 			</element>
-			<element hidden="yes" description="Contacts in the Exchange Account&apos;s OAB. Only available implicitly by finding results in the contacts panel" type="contact" access="r">
+			<element hidden="yes" description="Contacts in the Exchange Account's OAB. Only available implicitly by finding results in the contacts panel" type="contact" access="r">
 				<accessor style="id"/>
 			</element>
 			<property name="domain" code="ExDo" description="The domain of an exchange account." type="text">
@@ -1197,10 +1197,10 @@
 			<property name="ldap search base" code="LDSB" description="The search base of the LDAP server." type="text"/>
 			<property name="ldap max entries" code="LDMX" description="The maximum number of entires to get from the LDAP server." type="integer"/>
 			<property name="background autodiscover" code="pBAD" description="Indicates whether background autodisover is enabled or not." type="boolean"/>
-			<property name="oab" code="eaDS" description="The directory source for this account&apos;s Offline Address Book, if it has one. Use with the contacts panel to search the OAB." type="directory source" access="r">
+			<property name="oab" code="eaDS" description="The directory source for this account's Offline Address Book, if it has one. Use with the contacts panel to search the OAB." type="directory source" access="r">
 				<cocoa key="oabDirectorySource"/>
 			</property>
-			<property name="rooms" code="eaRD" description="The directory source for this account&apos;s meeting room index, if it has one. Use with the contacts panel to run searches" type="directory source" access="r">
+			<property name="rooms" code="eaRD" description="The directory source for this account's meeting room index, if it has one. Use with the contacts panel to run searches" type="directory source" access="r">
 				<cocoa key="meetingRoomsDirectorySource"/>
 			</property>
 			<property name="server version" code="eaSV" description="The version of the Exchange server." type="text" access="r"/>
@@ -1264,7 +1264,7 @@
 			<property name="use secure password" code="scPw" description="Indicates whether an IMAP account always sends the password securely." type="boolean">
 				<cocoa key="alwaysUseSecurePassword"/>
 			</property>
-			<property name="root folder path" code="rtFp" description="The path to an IMAP account&apos;s root folder." type="text">
+			<property name="root folder path" code="rtFp" description="The path to an IMAP account's root folder." type="text">
 				<cocoa key="imapRootFolderPath"/>
 			</property>
 			<property name="download message bodies" code="iDmB" description="Indicates if message bodies are downloaded completely." type="boolean">
@@ -1785,13 +1785,13 @@
 			<property name="is Japanese contact" code="jpnF" description="Indicates whether a contact is in Japanese format?" type="boolean">
 				<cocoa key="isJapaneseContact"/>
 			</property>
-			<property name="first name furigana" code="fFri" description="The furigana for a contact&apos;s first name (Japanese format contact only)." type="text">
+			<property name="first name furigana" code="fFri" description="The furigana for a contact's first name (Japanese format contact only)." type="text">
 				<cocoa key="furiganaFirstName"/>
 			</property>
-			<property name="last name furigana" code="lFri" description="The furigana for a contact&apos;s last name (Japanese format contact only)." type="text">
+			<property name="last name furigana" code="lFri" description="The furigana for a contact's last name (Japanese format contact only)." type="text">
 				<cocoa key="furiganaLastName"/>
 			</property>
-			<property name="middle name furigana" code="mFri" description="The furigana for a contact&apos;s middle name (Japanese format contact only)." type="text">
+			<property name="middle name furigana" code="mFri" description="The furigana for a contact's middle name (Japanese format contact only)." type="text">
 				<cocoa key="furiganaMiddleName"/>
 			</property>
 			<property name="children furigana" code="kFri" description="The furigana name of the children of a contact (Japanese format contact only).">
@@ -1862,7 +1862,7 @@
 			<property name="display type" code="eCDT" description="The type of contact" type="contact display type">
 				<cocoa key="displayType"/>
 			</property>
-			<property name="vcard data" code="vCrd" description="The information of a contact in vCard format. Use the &apos;import vcf&apos; command to create a contact from vCard information." type="text" access="r">
+			<property name="vcard data" code="vCrd" description="The information of a contact in vCard format. Use the 'import vcf' command to create a contact from vCard information." type="text" access="r">
 				<cocoa key="vCardRepresentation"/>
 			</property>
 			<responds-to command="open">
@@ -2079,7 +2079,7 @@
 			<enumerator name="declined" code="ASde" description="Attendee declined.">
 				<cocoa integer-value="3"/>
 			</enumerator>
-			<enumerator name="not responded" code="ASnr" description="Attendee hasn&apos;t responded.">
+			<enumerator name="not responded" code="ASnr" description="Attendee hasn't responded.">
 				<cocoa integer-value="0"/>
 			</enumerator>
 		</enumeration>
@@ -2153,7 +2153,7 @@
 			<property name="request responses" code="pRqR" description="Indicates whether a response is requested from the attendees of the meeting." type="boolean">
 				<cocoa key="responsesRequested"/>
 			</property>
-			<property name="icalendar data" code="iCal" description="The information of an event in iCalendar format. Use the &apos;import ics&apos; command to create an event from iCalendar information." type="text" access="r">
+			<property name="icalendar data" code="iCal" description="The information of an event in iCalendar format. Use the 'import ics' command to create an event from iCalendar information." type="text" access="r">
 				<cocoa key="iCalendarRepresentation"/>
 			</property>
 			<responds-to command="open">
@@ -2330,7 +2330,7 @@
 			<property name="modification date" code="asmo" description="The date a task was last modified on." type="date" access="r">
 				<cocoa key="modDate"/>
 			</property>
-			<property name="icalendar data" code="iCal" description="The information of a task in iCalendar format. Use the &apos;import ics&apos; command to create a task from iCalendar information." type="text" access="r">
+			<property name="icalendar data" code="iCal" description="The information of a task in iCalendar format. Use the 'import ics' command to create a task from iCalendar information." type="text" access="r">
 				<cocoa key="iCalendarRepresentation"/>
 			</property>
 			<responds-to command="open">
@@ -2366,7 +2366,7 @@
 			<property name="modification date" code="asmo" description="The date a note was last modified on." type="date" access="r">
 				<cocoa key="modDate"/>
 			</property>
-			<property name="icalendar data" code="iCal" description="The information of a note in iCalendar format. Use the &apos;import ics&apos; command to create a note from iCalendar information." type="text" access="r">
+			<property name="icalendar data" code="iCal" description="The information of a note in iCalendar format. Use the 'import ics' command to create a note from iCalendar information." type="text" access="r">
 				<cocoa key="iCalendarRepresentation"/>
 			</property>
 			<responds-to command="open">
@@ -2413,7 +2413,7 @@
 		</command>
 	</suite>
 	<suite hidden="yes" name="Debug Suite" code="OEDb" description="Classes and commands for Outlook debugging.">
-		<enumeration name="image source" code="imgs" description="Describes an image&apos;s source (database, cache, cached from a specific location online..)">
+		<enumeration name="image source" code="imgs" description="Describes an image's source (database, cache, cached from a specific location online..)">
 			<enumerator name="any cached image" code="ACcI" description="Gets any image from the cache, regardless of original source">
 				<cocoa integer-value="0"/>
 			</enumerator>
@@ -2447,7 +2447,7 @@
 				<cocoa integer-value="4"/>
 			</enumerator>
 		</enumeration>
-		<class-extension description="Application&apos;s extension for debugging purposes." extends="application">
+		<class-extension description="Application's extension for debugging purposes." extends="application">
 			<element hidden="yes" description="Debug tests in Outlook (debug only)." type="debug test"/>
 			<element hidden="yes" type="unit test"/>
 		</class-extension>

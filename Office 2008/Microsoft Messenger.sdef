@@ -1,3 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
-<dictionary><suite name="Required Suite" code="reqd" description="Terms that every application should support"/><suite name="Standard Suite" code="CoRe" description="Common terms for most applications"><command name="close" code="coreclos" description="Close an object"><direct-parameter type="specifier" description="the objects to close"/><parameter name="saving" code="savo" type="savo" optional="yes" description="specifies whether or not changes should be saved before closing"/><parameter name="in" code="kfil" type="alias" optional="yes" description="the file in which to save the object"/></command><command name="data size" code="coredsiz" description="Return the size in bytes of an object"><direct-parameter type="specifier" description="the object whose data size is to be returned"/><result type="integer" description="the size of the object in bytes"/></command><command name="get" code="coregetd" description="Get the data for an object"><direct-parameter type="specifier" description="the object whose data is to be returned"/><result type="any" description="The data from the object"/></command><command name="make" code="corecrel" description="Make a new element"><parameter name="new" code="kocl" type="type" description="the class of the new element"/><parameter name="at" code="insh" type="location specifier" optional="yes" description="the location at which to insert the element"/><parameter name="with data" code="data" type="any" optional="yes" description="the initial data for the element"/><parameter name="with properties" code="prdt" type="record" optional="yes" description="the initial values for the properties of the element"/><result type="specifier" description="Object specifier for the new element"/></command><command name="open" code="aevtodoc" description="Open the specified object(s)"><direct-parameter type="specifier" description="Objects to open. Can be a list of files or an object specifier."/></command><command name="print" code="aevtpdoc" description="Print the specified object(s)"><direct-parameter type="specifier" description="Objects to print. Can be a list of files or an object specifier."/></command><command name="save" code="coresave" description="save a set of objects"><direct-parameter type="specifier" description="Objects to save."/><parameter name="in" code="kfil" type="alias" optional="yes" description="the file in which to save the object(s)"/><parameter name="as" code="fltp" type="type" optional="yes" description="the file type of the document in which to save the data"/></command><command name="set" code="coresetd" description="Set an object’s data"><direct-parameter type="specifier" description="the object to change"/><parameter name="to" code="data" type="any" description="the new value"/></command><class name="application" code="capp" description="An application program"><element type="window"/><element type="document"/></class><class name="window" code="cwin" description="A Window"><property name="bounds" code="pbnd" type="rectangle" description="the boundary rectangle for the window"/><property name="closeable" code="hclb" type="boolean" access="r" description="Does the window have a close box?"/><property name="titled" code="ptit" type="boolean" access="r" description="Does the window have a title bar?"/><property name="index" code="pidx" type="integer" description="the number of the window"/><property name="floating" code="isfl" type="boolean" access="r" description="Does the window float?"/><property name="modal" code="pmod" type="boolean" access="r" description="Is the window modal?"/><property name="resizable" code="prsz" type="boolean" access="r" description="Is the window resizable?"/><property name="zoomable" code="iszm" type="boolean" access="r" description="Is the window zoomable?"/><property name="zoomed" code="pzum" type="boolean" description="Is the window zoomed?"/><property name="name" code="pnam" type="text" description="the title of the window"/><property name="visible" code="pvis" type="boolean" access="r" description="is the window visible?"/><property name="position" code="ppos" type="point" access="r" description="upper left coordinates of window"/></class><class name="document" code="docu" description="A Document"><property name="name" code="pnam" type="text" access="r" description="the title of the document"/><property name="modified" code="imod" type="boolean" access="r" description="Has the document been modified since the last save?"/></class><enumeration name="savo" code="savo"><enumerator name="yes" code="yes " description="Save objects now"/><enumerator name="no" code="no  " description="Do not save objects"/><enumerator name="ask" code="ask " description="Ask the user whether to save"/></enumeration></suite><suite name="Miscellaneous Standards" code="misc" description="Useful events that aren’t in any other suite"><command name="revert" code="miscrvrt" description="Revert an object to the most recently saved version"><direct-parameter type="specifier" description="object to revert"/></command></suite><suite name="odds and ends" code="Odds" description="Things that should be in some standard suite, but aren’t"><command name="SetTellTarget" code="ppntsttg" description="Makes an object the “focus” of AppleEvents"><parameter name="to" code="data" type="specifier" optional="yes" description="reference to new focus of AppleEvents"/></command><command name="select" code="miscslct" description="Select the specified object"><direct-parameter type="specifier" optional="yes" description="the object to select"/></command></suite></dictionary>
+<dictionary>
+	<suite name="Required Suite" code="reqd" description="Terms that every application should support"/>
+	<suite name="Standard Suite" code="CoRe" description="Common terms for most applications">
+		<command name="close" code="coreclos" description="Close an object">
+			<direct-parameter type="specifier" description="the objects to close"/>
+			<parameter name="saving" code="savo" type="savo" optional="yes" description="specifies whether or not changes should be saved before closing"/>
+			<parameter name="in" code="kfil" type="alias" optional="yes" description="the file in which to save the object"/>
+		</command>
+		<command name="data size" code="coredsiz" description="Return the size in bytes of an object">
+			<direct-parameter type="specifier" description="the object whose data size is to be returned"/>
+			<result type="integer" description="the size of the object in bytes"/>
+		</command>
+		<command name="get" code="coregetd" description="Get the data for an object">
+			<direct-parameter type="specifier" description="the object whose data is to be returned"/>
+			<result type="any" description="The data from the object"/>
+		</command>
+		<command name="make" code="corecrel" description="Make a new element">
+			<parameter name="new" code="kocl" type="type" description="the class of the new element"/>
+			<parameter name="at" code="insh" type="location specifier" optional="yes" description="the location at which to insert the element"/>
+			<parameter name="with data" code="data" type="any" optional="yes" description="the initial data for the element"/>
+			<parameter name="with properties" code="prdt" type="record" optional="yes" description="the initial values for the properties of the element"/>
+			<result type="specifier" description="Object specifier for the new element"/>
+		</command>
+		<command name="open" code="aevtodoc" description="Open the specified object(s)">
+			<direct-parameter type="specifier" description="Objects to open. Can be a list of files or an object specifier."/>
+		</command>
+		<command name="print" code="aevtpdoc" description="Print the specified object(s)">
+			<direct-parameter type="specifier" description="Objects to print. Can be a list of files or an object specifier."/>
+		</command>
+		<command name="save" code="coresave" description="save a set of objects">
+			<direct-parameter type="specifier" description="Objects to save."/>
+			<parameter name="in" code="kfil" type="alias" optional="yes" description="the file in which to save the object(s)"/>
+			<parameter name="as" code="fltp" type="type" optional="yes" description="the file type of the document in which to save the data"/>
+		</command>
+		<command name="set" code="coresetd" description="Set an object’s data">
+			<direct-parameter type="specifier" description="the object to change"/>
+			<parameter name="to" code="data" type="any" description="the new value"/>
+		</command>
+		<class name="application" code="capp" description="An application program">
+			<element type="window"/>
+			<element type="document"/>
+		</class>
+		<class name="window" code="cwin" description="A Window">
+			<property name="bounds" code="pbnd" type="rectangle" description="the boundary rectangle for the window"/>
+			<property name="closeable" code="hclb" type="boolean" access="r" description="Does the window have a close box?"/>
+			<property name="titled" code="ptit" type="boolean" access="r" description="Does the window have a title bar?"/>
+			<property name="index" code="pidx" type="integer" description="the number of the window"/>
+			<property name="floating" code="isfl" type="boolean" access="r" description="Does the window float?"/>
+			<property name="modal" code="pmod" type="boolean" access="r" description="Is the window modal?"/>
+			<property name="resizable" code="prsz" type="boolean" access="r" description="Is the window resizable?"/>
+			<property name="zoomable" code="iszm" type="boolean" access="r" description="Is the window zoomable?"/>
+			<property name="zoomed" code="pzum" type="boolean" description="Is the window zoomed?"/>
+			<property name="name" code="pnam" type="text" description="the title of the window"/>
+			<property name="visible" code="pvis" type="boolean" access="r" description="is the window visible?"/>
+			<property name="position" code="ppos" type="point" access="r" description="upper left coordinates of window"/>
+		</class>
+		<class name="document" code="docu" description="A Document">
+			<property name="name" code="pnam" type="text" access="r" description="the title of the document"/>
+			<property name="modified" code="imod" type="boolean" access="r" description="Has the document been modified since the last save?"/>
+		</class>
+		<enumeration name="savo" code="savo">
+			<enumerator name="yes" code="yes " description="Save objects now"/>
+			<enumerator name="no" code="no  " description="Do not save objects"/>
+			<enumerator name="ask" code="ask " description="Ask the user whether to save"/>
+		</enumeration>
+	</suite>
+	<suite name="Miscellaneous Standards" code="misc" description="Useful events that aren’t in any other suite">
+		<command name="revert" code="miscrvrt" description="Revert an object to the most recently saved version">
+			<direct-parameter type="specifier" description="object to revert"/>
+		</command>
+	</suite>
+	<suite name="odds and ends" code="Odds" description="Things that should be in some standard suite, but aren’t">
+		<command name="SetTellTarget" code="ppntsttg" description="Makes an object the “focus” of AppleEvents">
+			<parameter name="to" code="data" type="specifier" optional="yes" description="reference to new focus of AppleEvents"/>
+		</command>
+		<command name="select" code="miscslct" description="Select the specified object">
+			<direct-parameter type="specifier" optional="yes" description="the object to select"/>
+		</command>
+	</suite>
+</dictionary>
