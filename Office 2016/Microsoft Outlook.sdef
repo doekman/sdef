@@ -1,0 +1,2818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Outlook">
+	<suite name="Standard Suite" code="????" description="Common classes and commands for most applications.">
+		<cocoa name="NSCoreSuite"/>
+		<enumeration name="save options" code="savo">
+			<enumerator name="yes" code="yes " description="Save the file."/>
+			<enumerator name="no" code="no  " description="Do not save the file."/>
+			<enumerator name="ask" code="ask " description="Ask the user whether or not to save the file."/>
+		</enumeration>
+		<record-type name="print settings" code="pset" description="The standard and custom print settings for Outlook.">
+			<property name="copies" code="lwcp" description="the number of copies of a document to be printed." type="integer">
+				<cocoa key="NSCopies"/>
+			</property>
+			<property name="collating" code="lwcl" description="Should printed copies be collated?" type="boolean">
+				<cocoa key="NSMustCollate"/>
+			</property>
+			<property name="starting page" code="lwfp" description="the first page of the document to be printed." type="integer">
+				<cocoa key="NSFirstPage"/>
+			</property>
+			<property name="ending page" code="lwlp" description="the last page of the document to be printed." type="integer">
+				<cocoa key="NSLastPage"/>
+			</property>
+			<property name="pages across" code="lwla" description="number of logical pages laid across a physical page." type="integer">
+				<cocoa key="NSPagesAcross"/>
+			</property>
+			<property name="pages down" code="lwld" description="number of logical pages laid out down a physical page." type="integer">
+				<cocoa key="NSPagesDown"/>
+			</property>
+			<property name="error handling" code="lweh" description="how errors are handled" type="printing error handling">
+				<cocoa key="NSDetailedErrorReporting"/>
+			</property>
+			<property name="requested print time" code="lwqt" description="the time at which the desktop printer should print the document." type="date">
+				<cocoa key="NSPrintTime"/>
+			</property>
+			<property name="fax number" code="faxn" description="for fax number." type="text">
+				<cocoa key="NSFaxNumber"/>
+			</property>
+			<property name="target printer" code="trpr" description="for target printer." type="text">
+				<cocoa key="NSPrinterName"/>
+			</property>
+			<property name="page number" code="PNum" description="Print page numbers?  If yes, they are printed at bottom right hand corner of each printed page." type="boolean"/>
+			<property name="background" code="Bgrd" description="print background for note/message? " type="boolean"/>
+			<property name="pictures" code="Pict" description="print pictures in note/message body or contact image?" type="boolean"/>
+			<property name="header date" code="PDat" description="print current date/time information at top right corner? Can be turned off for printing messages." type="boolean"/>
+			<property name="task truncate columns" code="TrCm" description="truncate columns for tasks in table view?" type="boolean">
+				<cocoa key="taskPrefsTruncateColumns"/>
+			</property>
+			<property name="task status" code="PTSt" description="print status(complete/incomplete) for a task?" type="boolean">
+				<cocoa key="tasks-status"/>
+			</property>
+			<property name="task priority" code="TPrt" description="print priority for a task?" type="boolean">
+				<cocoa key="tasks-priority"/>
+			</property>
+			<property name="task start date" code="StDt" description="print start date for task?" type="boolean">
+				<cocoa key="tasks-start-date"/>
+			</property>
+			<property name="task due date" code="DuDt" description="print due date for task? " type="boolean">
+				<cocoa key="tasks-due-date"/>
+			</property>
+			<property name="task completed date" code="CoDt" description="print task completed date?" type="boolean">
+				<cocoa key="tasks-completed-date"/>
+			</property>
+			<property name="category" code="cCtg" description="print category(s) for task/contact?" type="boolean"/>
+			<property name="recurrence" code="pRca" description="print recurrence information? Applicable for tasks and events. " type="boolean"/>
+			<property name="description" code="dScr" description="print note description for tasks/contacts?" type="boolean"/>
+			<property name="reminder date" code="TRem" description="print reminder date? Only applicable for printing a task in table style &amp; printing events." type="boolean"/>
+			<property name="tasks selected" code="TPSe" description="print either selected task or per task selection." type="task selection">
+				<cocoa key="taskPrefsPrintSelector"/>
+			</property>
+			<property name="show email address" code="PEAd" description="print email address information for message/contact?" type="boolean"/>
+			<property name="message header name" code="PENa" description="print name on top left for email message?" type="boolean">
+				<cocoa key="emailPrefsPrintName"/>
+			</property>
+			<property name="message header display name" code="EDNa" description="set the name to print on top left for the email message" type="text">
+				<cocoa key="emailPrefsNameString"/>
+			</property>
+			<property name="contact custom fields" code="CuFi" description="print custom fields for contacts?" type="boolean">
+				<cocoa key="print-contacts-custom-fields-id"/>
+			</property>
+			<property name="contact personal" code="Pers" description="print personal contact information?" type="boolean">
+				<cocoa key="print-contacts-personal-info-id"/>
+			</property>
+			<property name="contact IM" code="PrIM" description="print contact IM information?" type="boolean">
+				<cocoa key="print-contacts-im-addr-id"/>
+			</property>
+			<property name="contact phone" code="PhIn" description="print contact phone information?" type="boolean">
+				<cocoa key="print-contacts-phone-num-id"/>
+			</property>
+			<property name="contact work address" code="WrAd" description="print contact work address info?" type="boolean">
+				<cocoa key="print-contacts-work-addr-id"/>
+			</property>
+			<property name="contact home address" code="HmAd" description="print contact home address information?" type="boolean">
+				<cocoa key="print-contacts-home-addr-id"/>
+			</property>
+			<property name="contact company" code="ComI" description="Print company name for contact?" type="boolean">
+				<cocoa key="print-contacts-company-id"/>
+			</property>
+			<property name="contact selection" code="CPSe" description="print contact selected/all/flagged - per enum" type="contact selection">
+				<cocoa key="contactsPrefPrintSelection"/>
+			</property>
+			<property name="contact phone list style" code="CPSt" description="print contact in phone list style" type="boolean">
+				<cocoa key="contactsPrefIsPhoneListStyle"/>
+			</property>
+			<property name="contact apply page breaks" code="PgBr" description="apply page breaks when printing contacts?" type="boolean">
+				<cocoa key="contactsPrefApplyPageBreaks"/>
+			</property>
+			<property name="contact sort by company" code="CSBy" description="sort contacts by company name for printing?" type="boolean">
+				<cocoa key="contactsPrefSortByCompany"/>
+			</property>
+			<property name="contact name style" code="PNSt" description="for contact" type="contact name style">
+				<cocoa key="contactsPrefNameStyle"/>
+			</property>
+			<property name="as pdf" code="OPdf" description="print as PDF? " type="boolean">
+				<cocoa key="asPDF"/>
+			</property>
+			<property name="path name" code="PPdf" description="Complete url of destination pdf file, including file name. if directory url preceeding file name is not valid, does not create an output file." type="text">
+				<cocoa key="pdfName"/>
+			</property>
+			<property name="selected note" code="allN" description="Setting this to true, will only print the one note in the identifier (default). Set this to false to print all notes. " type="boolean">
+				<cocoa key="notePrefsPrintSelectionOnly"/>
+			</property>
+		</record-type>
+		<enumeration name="printing error handling" code="enum" description="The print error reporting styles.">
+			<enumerator name="standard" code="lwst" description="Standard PostScript error handling.">
+				<cocoa boolean-value="NO"/>
+			</enumerator>
+			<enumerator name="detailed" code="lwdt" description="Print a detailed report of PostScript errors.">
+				<cocoa boolean-value="YES"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="task selection" code="TSel" description="Indicates what tasks to print.">
+			<enumerator name="print all" code="PAll" description="Print all tasks">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="selected task" code="Sele" description="Print selected task">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="due today" code="DTod" description="print tasks due today">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="due this week" code="DTWk" description="print tasks due this week">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="incomplete" code="ICom" description="print all incomplete tasks">
+				<cocoa integer-value="4"/>
+			</enumerator>
+			<enumerator name="list view" code="LVie" description="print list view ">
+				<cocoa integer-value="5"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="contact name style" code="CNSt" description="Indicates the style in which contacts names will be printed.">
+			<enumerator name="Last First" code="LaFi" description="Prints name as Last First">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="First Last" code="FiLa" description="Prints contact name as First Last">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="Last Comma First" code="LCFi" description="prints contact name as Last, First">
+				<cocoa integer-value="0"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="contact selection" code="CSel" description="Indicates what contacts to print.">
+			<enumerator name="selected contact" code="PCSe" description="print selected contact.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="all contacts" code="AllC" description="print all contacts.">
+				<cocoa string-value="1"/>
+			</enumerator>
+			<enumerator name="flagged contacts" code="FlgC" description="print flagged contacts.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<class name="item" code="cobj" description="A scriptable object.">
+			<cocoa class="AbstractObject"/>
+			<property name="class" code="pcls" description="The class of the object." type="type" access="r">
+				<cocoa key="classCode"/>
+			</property>
+			<property name="properties" code="pALL" description="All of the object&apos;s properties." type="record">
+				<cocoa key="scriptingProperties"/>
+			</property>
+			<!--
+						The blank method declarations are needed to emulate the existing
+						NSCoreSuite.scriptSuite.framework.  Ordinarily, you wouldn't do this.
+					-->
+			<responds-to command="count">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="delete">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="duplicate">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="exists">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="get">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="move">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="set">
+				<cocoa method=""/>
+			</responds-to>
+		</class>
+		<class name="window" code="cwin" description="A window." inherits="item">
+			<cocoa class="NSWindow"/>
+			<property name="name" code="pnam" description="The full title of the window." type="text">
+				<cocoa key="title"/>
+			</property>
+			<property name="id" code="ID  " description="The unique identifier of the window." type="integer" access="r">
+				<cocoa key="uniqueID"/>
+			</property>
+			<property name="bounds" code="pbnd" description="The bounding rectangle of the window." type="rectangle">
+				<cocoa key="boundsAsQDRect"/>
+			</property>
+			<property name="closeable" code="hclb" description="Whether the window has a close box." type="boolean" access="r">
+				<cocoa key="hasCloseBox"/>
+			</property>
+			<property name="titled" code="ptit" description="Whether the window has a title bar." type="boolean" access="r">
+				<cocoa key="hasTitleBar"/>
+			</property>
+			<!-- the type is supposed to be "integer" -->
+			<property name="index" code="pidx" description="The index of the window in the back-to-front window ordering." type="integer">
+				<cocoa key="orderedIndex"/>
+			</property>
+			<property name="object" code="cRec" description="The record displayed in the window (if there is one)." type="object" access="r"/>
+			<property name="floating" code="isfl" description="Whether the window floats." type="boolean" access="r">
+				<cocoa key="isFloatingPanel"/>
+			</property>
+			<property name="miniaturizable" code="ismn" description="Whether the window can be miniaturized." type="boolean" access="r">
+				<cocoa key="isMiniaturizable"/>
+			</property>
+			<property name="miniaturized" code="pmnd" description="Whether the window is currently miniaturized." type="boolean">
+				<cocoa key="isMiniaturized"/>
+			</property>
+			<property name="modal" code="pmod" description="Whether the window is the application&apos;s current modal window." type="boolean" access="r">
+				<cocoa key="isModalPanel"/>
+			</property>
+			<property name="resizable" code="prsz" description="Whether the window can be resized." type="boolean" access="r">
+				<cocoa key="isResizable"/>
+			</property>
+			<property name="visible" code="pvis" description="Whether the window is currently visible." type="boolean">
+				<cocoa key="isVisible"/>
+			</property>
+			<property name="zoomable" code="iszm" description="Whether the window can be zoomed." type="boolean" access="r">
+				<cocoa key="isZoomable"/>
+			</property>
+			<property name="zoomed" code="pzum" description="Whether the window is currently zoomed." type="boolean">
+				<cocoa key="isZoomed"/>
+			</property>
+			<responds-to command="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to command="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+		</class>
+		<!-- The old Standard Suite: run, reopen, open, print, and quit. -->
+		<command name="open" code="aevtodoc" description="Open an object.">
+			<direct-parameter description="The object or file(s) to be opened.">
+				<type type="specifier"/>
+				<type type="file"/>
+				<type type="file" list="yes"/>
+			</direct-parameter>
+		</command>
+		<command name="quit" code="aevtquit" description="Quit an application.">
+			<cocoa class="NSQuitCommand"/>
+			<parameter name="saving" code="savo" description="Specifies whether changes should be saved before quitting." type="save options" optional="yes">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+		</command>
+		<!-- The old Core Suite: the object model commands, plus a few more. -->
+		<command name="close" code="coreclos" description="Close an object.">
+			<cocoa class="NSCloseCommand"/>
+			<direct-parameter description="the object to close" type="specifier"/>
+			<parameter name="saving" code="savo" description="Specifies whether changes should be saved before closing." type="save options" optional="yes">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+			<parameter name="saving in" code="kfil" description="The file in which to save the object." type="file" optional="yes">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+		<command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
+			<cocoa class="NSCountCommand"/>
+			<direct-parameter description="the object whose elements are to be counted" type="specifier"/>
+			<parameter name="each" code="kocl" description="The class of objects to be counted." type="type" optional="yes">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<result description="the number of elements" type="integer"/>
+		</command>
+		<command name="delete" code="coredelo" description="Delete an object. Messages and folders are moved to the corresponding deleted items folder (See permanently delete command in the Outlook Suite).">
+			<cocoa class="ASDeleteCommand"/>
+			<direct-parameter description="the object to delete" type="specifier"/>
+		</command>
+		<command name="duplicate" code="coreclon" description="Copy object(s) and put the copies at a new location.">
+			<cocoa name="Copy" class="ASCloneCommand"/>
+			<direct-parameter description="the object(s) to duplicate" type="specifier"/>
+			<!-- "duplicate" is supposed to return the new objects.
+				<result type="object" description="to the duplicated object(s)"/>
+				-->
+			<!-- "to" is supposed to be optional. -->
+			<parameter name="to" code="insh" description="The location for the new object(s)." type="location specifier">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" description="Properties to be set in the new duplicated object(s)." type="record" optional="yes">
+				<cocoa key="WithProperties"/>
+			</parameter>
+		</command>
+		<command name="exists" code="coredoex" description="Verify if an object exists.">
+			<cocoa class="NSExistsCommand"/>
+			<direct-parameter description="the object in question" type="specifier"/>
+			<result description="true if it exists, false if not" type="boolean"/>
+		</command>
+		<!-- "get" is supposed to be hidden. -->
+		<command name="get" code="coregetd" description="Get the data for an object.">
+			<cocoa class="NSGetCommand"/>
+			<direct-parameter type="specifier"/>
+			<result type="any"/>
+		</command>
+		<command name="make" code="corecrel" description="Make a new object.">
+			<cocoa name="Create" class="NSCreateCommand"/>
+			<parameter name="new" code="kocl" description="The class of the new object." type="type">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<parameter name="at" code="insh" description="The location at which to insert the object." type="location specifier" optional="yes">
+				<cocoa key="Location"/>
+			</parameter>
+			<parameter name="with data" code="data" description="The initial data for the object." type="any" optional="yes">
+				<cocoa key="ObjectData"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" description="The initial values for properties of the object." type="record" optional="yes">
+				<cocoa key="KeyDictionary"/>
+			</parameter>
+			<result description="to the new object" type="specifier"/>
+		</command>
+		<command name="move" code="coremove" description="Move object(s) to a new location.">
+			<cocoa class="ASMoveCommand"/>
+			<direct-parameter description="the object(s) to move" type="specifier"/>
+			<!-- "move" is supposed to return the relocated objects.
+				<result type="object" description="to the object(s) after they have been moved"/>
+				-->
+			<parameter name="to" code="insh" description="The new location for the object(s)." type="location specifier">
+				<cocoa key="ToLocation"/>
+			</parameter>
+		</command>
+		<command name="save" code="coresave" description="Save an object.">
+			<direct-parameter description="the object to save, usually a document or window" type="specifier"/>
+			<parameter name="in" code="kfil" description="The file in which to save the object." type="file" optional="yes">
+				<cocoa key="File"/>
+			</parameter>
+			<parameter name="as" code="fltp" description="The file type in which to save the data." type="text" optional="yes">
+				<cocoa key="FileType"/>
+			</parameter>
+		</command>
+		<!-- "set" is supposed to be hidden. -->
+		<command name="set" code="coresetd" description="Set an object&apos;s data.">
+			<cocoa class="NSSetCommand"/>
+			<direct-parameter type="specifier"/>
+			<!-- "set" is supposed to return the fully evaluated "to" data.
+				<result type="any"/>
+				-->
+			<parameter name="to" code="data" description="The new value." type="any">
+				<cocoa key="Value"/>
+			</parameter>
+		</command>
+		<command name="run" code="aevtoapp" description="Open application.">
+			<direct-parameter description="the object to run" type="specifier" optional="yes"/>
+		</command>
+		<!-- NSCoreSuite doesn't define these.
+			<command name="run" code="aevtoapp" description="Run an application.  Most applications will open an empty, untitled window."/>
+			<command name="reopen" code="aevtrapp" description="Reactivate a running application.  Some applications will open a new untitled window if no window is open."/>
+			-->
+		<command name="print" code="aevtpdoc" description="Print an object.">
+			<!-- type would be better written as "file | document". -->
+			<direct-parameter description="The object specifier of the artifact to be printed (message/task/note/contact)." type="specifier"/>
+			<parameter name="with properties" code="prdt" description="The print settings to use" type="print settings" optional="yes">
+				<cocoa key="PrintSettings"/>
+			</parameter>
+		</command>
+	</suite>
+	<suite name="Outlook Suite" code="MSOE" description="Classes and commands for Outlook.">
+		<enumeration name="search type" code="cpST" description="The search type to use when searching the contacst panel">
+			<enumerator name="name search" code="cpNS" description="Search for contacts by name">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="all fields" code="cpAF" description="search for matches on several different fields">
+				<cocoa integer-value="1"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="main window view" code="eMWV" description="The different view&apos;s that Outlook&apos;s main window can be in.">
+			<enumerator name="mail view" code="MaVw" description="Look at all mails.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="calendar view" code="CaVw" description="Look at all events.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="contact view" code="CoVw" description="Look at all contacts.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="task view" code="TaVw" description="Look at all tasks.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="note view" code="NoVw" description="Look at all notes.">
+				<cocoa integer-value="4"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="priority" code="ePty" description="The priority values.">
+			<enumerator name="priority high" code="PrHi" description="High priority.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="priority normal" code="PrNr" description="Normal priority.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="priority low" code="PrLo" description="Low priority.">
+				<cocoa integer-value="4"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="flag" code="Flag" description="The flagged states.">
+			<enumerator name="not flagged" code="FlNF" description="Not flagged.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="not completed" code="FlNC" description="Flagged but not completed.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="completed" code="FlCo" description="Flagged and completed.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="email address type" code="eEAT" description="The type of the email address.">
+			<enumerator name="unresolved address" code="UnAd" description="Email address is not resolved.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="contact address" code="CoAd" description="Email address is a contact.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="public group address" code="PuAd" description="Email address is a public group.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="private group address" code="PrAd" description="Email address is a private group.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="email address" code="emad" description="An e-mail adddress.">
+			<property name="name" code="pnam" description="The display name." type="text"/>
+			<property name="address" code="radd" description="The e-mail address." type="text"/>
+			<property name="type" code="type" description="The type of an email address." type="email address type" access="r"/>
+		</record-type>
+		<value-type name="color" code="colr" description="A RGB color.">
+			<cocoa class="NSColor"/>
+		</value-type>
+		<value-type name="image" code="imgr" description="An image.">
+			<cocoa class="NSData"/>
+		</value-type>
+		<enumeration name="mark as read behavior" code="MkRd" description="The options for when to mark an item as read.">
+			<enumerator name="after preview time" code="MRPr" description="Mark an item as read after it has been previewed for a while.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="after selection change" code="MRSC" description="Mark an item as read when the selection changes.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="after opening" code="MROp" description="Mark an item as read when they are opened.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="attribution style" code="AttB" description="The attribution style options.">
+			<enumerator name="none" code="none" description="No attribution.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="include header" code="InHd" description="Use the header in attribution.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="include custom" code="InCs" description="Use a custom attribution.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="internet picture behavior" code="InPc" description="The downloading options for internet pictures.">
+			<enumerator name="always" code="Alws" description="Download pictures from the internet for all messages.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="only from contacts" code="FrCo" description="Download pictures from the internet only for messages from my contacts.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="never" code="Neva" description="Never download pictures from the internet.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="send to self behavior" code="auAS" description="Automatically add self when sending messages setting.">
+			<enumerator name="cc" code="CC  " description="Add self as cc recipient.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="bcc" code="BCC " description="Add self as bcc recipient.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="reading pane position" code="ilDm" description="The position of the reading pane is displayed.">
+			<enumerator name="display right" code="ilDc" description="The reading pane display is on the right.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="display below" code="ilDp" description="The reading pane display is on the bottom.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="display hidden" code="ilDh" description="The reading pane display is hidden.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="item list sort" code="iILS" description="Fields for sorting on the main view item list">
+			<enumerator name="status sort" code="ilSS" description="Sort by status (unread, repiled to, etc)">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="priority sort" code="ilPS" description="sort by priority">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="attachment sort" code="ilAS" description="sort by presence or absense of attachments">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="from sort" code="ilFS" description="Sort by the name and/or address of the sender">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="to sort" code="ilTS" description="sort by the name(s) and/or address(es) of the recipient(s)">
+				<cocoa integer-value="4"/>
+			</enumerator>
+			<enumerator name="subject sort" code="ilSU" description="sort by the subject of the email">
+				<cocoa integer-value="5"/>
+			</enumerator>
+			<enumerator name="sent time sort" code="ilSE" description="sort by the date the message was sent">
+				<cocoa integer-value="6"/>
+			</enumerator>
+			<enumerator name="received time sort" code="ilRS" description="sort by the date the message was received">
+				<cocoa integer-value="7"/>
+			</enumerator>
+			<enumerator name="flag sort" code="ilFL" description="sort by the flag status of the record">
+				<cocoa integer-value="8"/>
+			</enumerator>
+			<enumerator name="category sort" code="ilCS" description="sort by the categories on the records">
+				<cocoa integer-value="9"/>
+			</enumerator>
+			<enumerator name="size sort" code="ilSI" description="sort by the size of the message">
+				<cocoa integer-value="10"/>
+			</enumerator>
+			<enumerator name="folder sort" code="ilFO" description="sort by the folder the record is in">
+				<cocoa integer-value="11"/>
+			</enumerator>
+			<enumerator name="account sort" code="ilAC" description="sort by the account the record is in">
+				<cocoa integer-value="12"/>
+			</enumerator>
+			<enumerator name="conversation sort" code="ilCO" description="sort by conversation">
+				<cocoa integer-value="13"/>
+			</enumerator>
+			<enumerator name="display name sort" code="ilDS" description="sort by contact display name">
+				<cocoa integer-value="14"/>
+			</enumerator>
+			<enumerator name="title sort" code="ilTI" description="sort by title of the note or task">
+				<cocoa integer-value="15"/>
+			</enumerator>
+			<enumerator name="due date sort" code="ilDD" description="sort by the due date of the task">
+				<cocoa integer-value="16"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="sort descriptor" code="rISD">
+			<property name="sort field" code="pISF" type="item list sort">
+				<cocoa key="sortField"/>
+			</property>
+			<property name="ascending" code="pISA" type="boolean">
+				<cocoa key="isAscending"/>
+			</property>
+		</record-type>
+		<enumeration name="product activation state" code="olPA" description="The product activation state (full functionality, reduced functionality, offline demo)">
+			<enumerator name="full functionality" code="pFFM" description="Outlook is fully functional">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="reduced functionality never activated" code="pRFM" description="Outlook has not been activated, so you can&apos;t send mail.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="reduced functionality deactivated" code="pRFD" description="Your Office license is expired or inactive. You can&apos;t send mail messages without an active license.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="offline demo" code="pOFD" description="Your Office license currently does not allow you to send mail.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+		</enumeration>
+		<class name="application" code="capp" description="Outlook&apos;s top level scripting object.">
+			<cocoa class="CErageCocoaApp"/>
+			<element description="The address books created in Outlook." type="address book"/>
+			<element description="The calendars created in Outlook." type="calendar"/>
+			<element description="The events created in Outlook." type="calendar event"/>
+			<element description="The categories created in Outlook." type="category"/>
+			<element description="The contacts created in Outlook." type="contact"/>
+			<element description="The draft windows of the application." type="draft window">
+				<cocoa key="orderedDraftWindows"/>
+			</element>
+			<element description="The exchange accounts configured in Outlook." type="exchange account"/>
+			<element description="The folders created in Outlook." type="folder"/>
+			<element description="The contacts created in Outlook." type="group"/>
+			<element description="The IMAP accounts configured in Outlook." type="imap account"/>
+			<element description="The messages received by the user." type="incoming message"/>
+			<element description="The LDAP accounts configured in Outlook." type="ldap account"/>
+			<element description="The mail folders created in Outlook." type="mail folder"/>
+			<element description="The main windows of the application." type="main window">
+				<cocoa key="orderedMainWindows"/>
+			</element>
+			<element description="All messages created in Outlook." type="message"/>
+			<element description="The notes created in Outlook." type="note"/>
+			<element description="The note folders created in Outlook." type="note folder"/>
+			<element description="The messages created by the user." type="outgoing message"/>
+			<element description="The POP accounts configured in Outlook." type="pop account"/>
+			<element description="The tasks created in Outlook." type="task"/>
+			<element description="The task folders created in Outlook." type="task folder"/>
+			<element description="The signatures created in Outlook." type="signature"/>
+			<element description="The open windows of the application." type="window" access="r">
+				<cocoa key="orderedWindows"/>
+			</element>
+			<element hidden="yes" description="The meeting messages received by the user." type="meeting message" access="r"/>
+			<property name="current messages" code="CMgs" description="The current messages depending on the context." access="r">
+				<type type="message" list="yes"/>
+			</property>
+			<property name="default account" code="dfAc" description="The default account." type="account"/>
+			<property name="frontmost" code="pisf" description="Is this the frontmost (active) application?" type="boolean" access="r">
+				<cocoa key="isActive"/>
+			</property>
+			<property name="me contact" code="meCn" description="The contact that represents the user." type="contact"/>
+			<property name="name" code="pnam" description="The name of the application." type="text" access="r"/>
+			<property name="on my computer" code="pOMC" description="The On My Computer folder." type="folder" access="r"/>
+			<property name="selected folder" code="SeFo" description="The folder that is currently selected in the frontmost main window." type="folder"/>
+			<property name="selected objects" code="SeOb" description="The list of objects that are currently selected in the frontmost main window.">
+				<type type="object" list="yes"/>
+			</property>
+			<property name="selected text" code="SeTx" description="The text that is currently selected in the frontmost window." type="text"/>
+			<property name="selection" code="sele" description="The selection in the frontmost window.">
+				<type type="specifier"/>
+				<type type="specifier" list="yes"/>
+				<type type="text"/>
+			</property>
+			<property name="send all" code="pSdA" description="Does nothing." type="text" access="r"/>
+			<property name="send and receive all" code="pSRA" description="Does nothing." type="text" access="r"/>
+			<property name="version" code="vers" description="The version of the application." type="text" access="r"/>
+			<property name="working offline" code="wkOf" description="Is Outlook working offline (not connected to the internet)?" type="boolean"/>
+			<property name="inbox" code="pInb" description="The inbox folder of the default account." type="mail folder" access="r"/>
+			<property name="drafts" code="pDrt" description="The drafts folder of the default account." type="mail folder" access="r"/>
+			<property name="sent items" code="pSnt" description="The sent items folder of the default account." type="mail folder" access="r"/>
+			<property name="deleted items" code="pDlt" description="The deleted items folder of the default account." type="mail folder" access="r"/>
+			<property name="junk mail" code="pJnk" description="The junk mail folder of the default account." type="mail folder" access="r"/>
+			<property name="outbox" code="pObx" description="The outbox folder of the default account." type="mail folder" access="r"/>
+			<property name="current identity folder" code="CiDf" description="The folder of the current identity being used by OutLook." type="file" access="r"/>
+			<property name="group similar folders" code="GrpF" description="Indicates whether to group similar folders (Inbox, Drafts, etc.) from different accounts." type="boolean"/>
+			<property name="hide on my computer folders" code="hOMC" description="Indicates whether the on my computer folders are hidden." type="boolean"/>
+			<property name="display alerts" code="DsAl" description="Indicates whether to display a desktop alert when new mail arrives." type="boolean"/>
+			<property name="alert shows preview" code="AlPr" description="Indicates whether the alert displayed when new mail arrives includes a preview of the mail." type="boolean"/>
+			<property name="bounce dock icon" code="Bnce" description="Indicates whether to bounce the dock icon when new mail arrives." type="boolean"/>
+			<property name="play sound on new message" code="SnNM" description="Indicates whether to play sound when a new message arrives." type="boolean"/>
+			<property name="play sound on message send" code="SnMS" description="Indicates whether to play sound when a message is sent." type="boolean"/>
+			<property name="play sound on reminder" code="SnRm" description="Indicates whether to play sound when a reminder fires." type="boolean"/>
+			<property name="play sound on sync error" code="SnSE" description="Indicates whether to play sound when an error occurs while syncing." type="boolean"/>
+			<property name="play sound on no new messages" code="SnNo" description="Indicates whether to play sound if there are no new messages." type="boolean"/>
+			<property name="play sound on startup" code="SnSt" description="Indicates whether to play sound when Outlook starts up." type="boolean"/>
+			<property name="categorize message from contacts" code="CaMg" description="Indicates whether messages are automatically assigned categories based on the categores of the sender&apos;s contact." type="boolean"/>
+			<property name="show new categories in navigation pane" code="ShCa" description="Indicates whether to automatically show new categories in the navigation pane." type="boolean"/>
+			<property name="mark item as read" code="MkRd" description="Indicates when to mark an item as read." type="mark as read behavior"/>
+			<property name="mark as read preview duration" code="MRTm" description="The number of seconds to preview an item before marking it as read (applicable only when mark item as read is set to mark as read after preview)." type="integer"/>
+			<property name="expand single conversation" code="OnCv" description="Indicates whether to expand only one conversation at a time." type="boolean"/>
+			<property name="expand conversation on select" code="ExCv" description="Indicates whether to automatically expand a conversation when selected." type="boolean"/>
+			<property name="highlight messages from conversation" code="HiCv" description="Indicates whether to highlight messages from the same conversation." type="boolean"/>
+			<property name="hide imap messages marked for deletion" code="hMgD" description="Indicates whether to hide IMAP messages which are marked for deletion." type="boolean"/>
+			<property name="internet picture behavior" code="InPi" description="Indicates when to download internet pictures." type="internet picture behavior"/>
+			<property name="indent lines of original html message" code="iMgH" description="Indicates whether to indent each line of the original message when replying or forwarding a message in HTML." type="boolean"/>
+			<property name="place cursor before original html message" code="cMgH" description="Indicates whether to place the cursor before the original message when replying or forwarding a message in HTML." type="boolean"/>
+			<property name="attribution of html message" code="AttH" description="The attribution style to use for HTML messages." type="attribution style"/>
+			<property name="indent lines of original plain text message" code="iMgP" description="Indicates whether to indent each line of the original message when replying or forwarding a message in plain text." type="boolean"/>
+			<property name="place cursor before original plain text message" code="cMgP" description="Indicates whether to place the cursor before the original message when replying or forwarding a message in plain text." type="boolean"/>
+			<property name="attribution of plain text message" code="AttP" description="The attribution style to use for plain text messages." type="attribution style"/>
+			<property name="compose messages in html by default" code="dMgH" description="Indicates whether new messages are created in HTML by default." type="boolean"/>
+			<property name="retain format on replies or forwards" code="rMgF" description="Indicates whether to use the format of the original message when replying or forwarding." type="boolean"/>
+			<property name="use default account for replies and forwards" code="daMg" description="Indicates whether to use the default account when replying or forwarding." type="boolean"/>
+			<property name="close window after reply and forward" code="cMgW" description="Indicates whether to close the original message window when replying or forwarding." type="boolean"/>
+			<property name="include myself when sending" code="asMg" description="Indicates whether to add myself when sending messages." type="boolean"/>
+			<property name="include myself as" code="SdSf" description="The option to use when including myself when sending messages." type="send to self behavior"/>
+			<property name="shared alerts center" code="aSaC" type="alerts center" access="r">
+				<cocoa key="alertsCenter"/>
+			</property>
+			<property name="shared contacts panel" code="paCP" description="Access to the Contacts Panel, a window that can be used to search various directory sources for contacts." type="contacts panel" access="r">
+				<cocoa key="contactsPanel"/>
+			</property>
+			<property name="system default everything application" code="pASD" description="Property returns YES if Outlook is the system default for mailto: links. Setting this value to YES makes Outlook the default application for mailto:, eml, ics, and vcf files and their appropriate UTI types. Setting this value to NO throws an error" type="boolean">
+				<cocoa key="isDefaultMailCalendarAddressBook"/>
+			</property>
+			<property name="system default mail application" code="pMSD" description="Returns whether Outlook is the default application for mailto: links. Setting it to true makes Outlook the default for mailto: and for eml files. Setting this property to false makes mail.app the defalut" type="boolean">
+				<cocoa key="isDefaultMailClient"/>
+			</property>
+			<property name="system default calendar application" code="pCSD" description="Returns whether Outlook is the default handler for ics files. Setting it to false makes ical the default handler" type="boolean">
+				<cocoa key="isDefaultCalendarClient"/>
+			</property>
+			<property name="system default address book application" code="pABD" description="Returns whether Outlook is the default handler for vcf files. Setting it to false makes Address Book the default" type="boolean">
+				<cocoa key="isDefaultAddressBookClient"/>
+			</property>
+			<property name="activation state" code="pAAS" description="The current product activation state of the application" type="product activation state" access="rw">
+				<cocoa key="productActivationState"/>
+			</property>
+			<property name="default text encoding" code="pDTE" description="The default text encoding to use when creating new draft messages. use 0 for &apos;automatic&apos;.  Use 21 for UTF-8. Other values are not publicly exposed." type="integer">
+				<cocoa key="defaultTextEncoding"/>
+			</property>
+			<property name="safe sender list" code="SaSL" description="The list of email addresses and domains which should not be treated as junk mail">
+				<cocoa key="safeSenderList"/>
+				<type type="text" list="yes"/>
+			</property>
+			<property name="blocked sender list" code="BlSL" description="The list of email addresses and domains which should be treated as junk mail">
+				<cocoa key="blockedSenderList"/>
+				<type type="text" list="yes"/>
+			</property>
+			<responds-to command="open">
+				<cocoa method="handleOpenScriptCommand:"/>
+			</responds-to>
+			<responds-to command="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to command="quit">
+				<cocoa method="handleQuitScriptCommand:"/>
+			</responds-to>
+		</class>
+		<class name="main window" code="cMWd" description="A main window." inherits="window">
+			<cocoa class="ASMainWindow"/>
+			<element description="Representation of the top-level nodes in the navigation hierarchy" type="navigation node" access="r">
+				<cocoa key="navigationNodes"/>
+				<accessor style="range"/>
+				<accessor style="index"/>
+			</element>
+			<element description="The list of records displayed in the main view. Presents a flat list representation of the records regardless of whether it is sorted into groups" type="object" access="r">
+				<cocoa key="displayedRecords"/>
+				<accessor style="range"/>
+				<accessor style="index"/>
+			</element>
+			<element description="Hierarchical representation of the structure in the item list, if the main view is displaying a list view" type="item list node" access="r">
+				<cocoa key="itemListNodes"/>
+				<accessor style="range"/>
+				<accessor style="index"/>
+			</element>
+			<property name="view" code="view" description="Main window&apos;s view (mail, calendar, task, etc)." type="main window view"/>
+			<property name="reading pane position" code="ilRP" description="The display position of the reading pane." type="reading pane position">
+				<cocoa key="readingPaneDisplay"/>
+			</property>
+			<property name="sorted in groups" code="pIGS" description="Whether the item list is sorted by groups" type="boolean">
+				<cocoa key="isSortedByGroups"/>
+			</property>
+			<property name="item list sort" code="pMWS" description="Description of the sort order of the item list" type="sort descriptor" access="w" in-properties="no">
+				<cocoa key="sortDescriptor"/>
+			</property>
+		</class>
+		<class name="draft window" code="cDfW" description="A message draft window." inherits="window">
+			<cocoa class="ASDraftWindow"/>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+		<class name="object" code="cRec" description="An abstract class representing an Outlook item (message, contact, etc.). It is never used directly." inherits="item">
+			<cocoa class="ASRecord"/>
+			<property name="id" code="ID  " description="The unique ID of a record." type="integer" access="r">
+				<cocoa key="uniqueID"/>
+			</property>
+		</class>
+		<class name="categorizable object" code="cCRd" description="An abstract class representing an object that can be categorizable. It is never used directly." inherits="object">
+			<cocoa class="ASCategorizableRecord"/>
+			<property name="categories" code="cCtg" description="The categories of an categorizable object.">
+				<type type="category" list="yes"/>
+			</property>
+		</class>
+		<class name="todoable object" code="cTDo" description="An abstract class representing an object that can be a todo. It is never used directly." inherits="categorizable object">
+			<cocoa class="ASToDoRecord"/>
+			<property name="todo flag" code="tFlg" description="The flagged status of a todoable object." type="flag"/>
+			<property name="start date" code="tStr" description="The date when a todo is scheduled to begin.">
+				<type type="date"/>
+				<type type="missing value"/>
+			</property>
+			<property name="due date" code="tDue" description="The date when a todo is due.">
+				<type type="date"/>
+				<type type="missing value"/>
+			</property>
+			<property name="reminder date time" code="tRmd" description="The date and time to remind about a todo.">
+				<type type="date"/>
+				<type type="missing value"/>
+			</property>
+			<property name="completed date" code="tCmp" description="The date when a todo was marked completed." type="date" access="r"/>
+		</class>
+		<class name="folder" code="cFld" description="An abstract class that represents a folder. To create a new folder use mail folder, address book, calendar, task folder or note folder." inherits="object">
+			<cocoa class="ASFolder"/>
+			<element description="The sub-folders of a folder." type="folder" access="r"/>
+			<element description="The mail sub-folders of a folder" type="mail folder"/>
+			<element description="The contact sub-folders of a folder." type="address book"/>
+			<element description="The calendar sub-folders of a folder." type="calendar"/>
+			<element description="The task sub-folders of a folder." type="task folder"/>
+			<element description="The note sub-folders of a folder." type="note folder"/>
+			<element description="The items (messages or contacts or calendar events or tasks or notes) in the folder." type="object" access="r">
+				<cocoa key="items"/>
+			</element>
+			<property name="name" code="pnam" description="The name of a folder." type="text"/>
+			<property name="container" code="ctnr" description="The containing folder of a folder." type="folder" access="r"/>
+			<property name="account" code="cAct" description="The account a folder belongs to." type="account" access="r"/>
+			<property name="subscribed" code="Scrb" description="Is this folder subscribed to? (applicable only to exchange public folders)." type="boolean" access="r">
+				<cocoa key="isSubscribed"/>
+			</property>
+			<property name="exchange id" code="ExID" description="The exchange identifier of a folder (only applicable for folders belonging to exchange accounts)." type="text" access="r">
+				<cocoa key="exchangeOrEasID"/>
+			</property>
+			<property name="has idle thread" code="idlg" description="Does this folder have IDLE running on it? (applicable only to IMAP folders)" type="boolean" access="r">
+				<cocoa key="isIDLEActive"/>
+			</property>
+			<responds-to command="sync">
+				<cocoa method="handleSyncCommand:"/>
+			</responds-to>
+			<responds-to command="repair">
+				<cocoa method="handleRepairMessageListCommand:"/>
+			</responds-to>
+			<responds-to command="purge deleted items">
+				<cocoa method="handlePurgeDeletedItemsCommand:"/>
+			</responds-to>
+			<responds-to command="permanently delete">
+				<cocoa method="handlePermanentlyDeleteCommand:"/>
+			</responds-to>
+			<responds-to command="empty cache">
+				<cocoa method="handleEmptyCacheCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+		<class name="category" code="cCtg" description="A category." plural="categories" inherits="object">
+			<cocoa class="ASCategory"/>
+			<property name="name" code="pnam" description="The name of a category." type="text"/>
+			<property name="color" code="colr" description="The color of a category." type="color">
+				<cocoa key="backgroundColor"/>
+			</property>
+			<property name="show in navigation pane" code="NavP" description="True if a category is displayed in navigation pane in Calendar, Contact, Task and Note Views." type="boolean"/>
+		</class>
+		<class name="contacts panel" code="cOCP" description="The contacts panel, used for finding contacts from a variety of address books." inherits="window">
+			<cocoa class="ASContactsPanel"/>
+			<element description="List of directory sources." type="directory source" access="r">
+				<cocoa key="directorySources"/>
+				<accessor style="index"/>
+			</element>
+			<element description="Currently-displaying search results." type="contact" access="r">
+				<cocoa key="searchResults"/>
+				<accessor style="range"/>
+				<accessor style="index"/>
+			</element>
+			<property name="search string" code="cpSQ" description="The query to search on." type="text">
+				<cocoa key="searchQuery"/>
+			</property>
+			<property name="search type" code="cpST" description="the type of search to run." type="search type">
+				<cocoa key="searchType"/>
+			</property>
+			<property name="current source" code="cPds" description="The current place searches will happen from." type="directory source">
+				<cocoa key="currentDirectorySource"/>
+			</property>
+			<property name="searching" code="cpIS" description="True if the contacts panel is currently in progress of searching." type="boolean" access="r">
+				<cocoa key="isSearching"/>
+			</property>
+			<property name="error string" code="cpER" description="Text string for the current error condition (can be empty is all is well)." type="text" access="r">
+				<cocoa key="error"/>
+			</property>
+		</class>
+		<class name="directory source" code="cCPS" inherits="item">
+			<cocoa class="ASDirectorySource"/>
+			<property name="name" code="pnam" description="The name of a directory source." type="text" access="r">
+				<cocoa key="name"/>
+			</property>
+		</class>
+		<class name="attachment" code="cAtc" description="A file attached to a record." inherits="item">
+			<cocoa class="ASAttachment"/>
+			<property name="name" code="pnam" description="The name of an attachment." type="text" access="r"/>
+			<property name="content type" code="cTyp" description="The MIME type of an attachement (eg. text/plain)." type="text" access="r"/>
+			<property name="file" code="file" description="The associated file of an attachment (if there is one). This is writable only when making a new attachment using a file." type="file"/>
+			<property name="file size" code="flSz" description="The size of the associated file of an attachment (if there is one)." type="integer" access="r"/>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+		<class name="alerts center" code="cOLA" description="Owner of all toast alerts" inherits="object">
+			<cocoa class="ASAlertsCenter"/>
+			<property name="show alert" code="pOSA" description="Set this property to show an alert with the message." type="message" access="w" in-properties="no">
+				<cocoa key="showAlert"/>
+			</property>
+			<property name="overflow timeout" code="pAOF" description="The length of time the alerts center will block alerts after receiving too many all at once" type="integer">
+				<cocoa key="overflowTimeout"/>
+			</property>
+		</class>
+		<class name="navigation node" code="cmwN" description="And item in the navigation pane hierarchy" plural="navigation nodes" inherits="item">
+			<cocoa class="ASNavigationPaneNode"/>
+			<element description="The children nodes of a node" type="navigation node" access="r">
+				<cocoa key="children"/>
+				<accessor style="range"/>
+				<accessor style="index"/>
+			</element>
+			<property name="expanded" code="pnpE" description="Whether the node is currently expanded" type="boolean">
+				<cocoa key="isExpanded"/>
+			</property>
+			<property name="title" code="titl" description="The displayed name of the node" type="text" access="r">
+				<cocoa key="title"/>
+			</property>
+			<property name="folder" code="cFld" description="The folder this node represents. Maybe missing value if this node does not represent a folder" access="r">
+				<cocoa key="folder"/>
+				<type type="folder"/>
+				<type type="missing value"/>
+			</property>
+			<property name="account" code="cAct" description="The account this node represents. May be missing value if this node does not represent an account" access="r">
+				<cocoa key="account"/>
+				<type type="account"/>
+				<type type="missing value"/>
+			</property>
+			<property name="category" code="cCtg" description="The category this node represents. May be missing value if thisn ode does not represent a category" access="r">
+				<cocoa key="category"/>
+				<type type="category"/>
+				<type type="missing value"/>
+			</property>
+			<property name="checked" code="cisC" description="true if this node has a check-state and is checked. Otherwise false" type="boolean" access="r">
+				<cocoa key="isChecked"/>
+			</property>
+			<property name="badge count" code="pnBC" description="The number being shown in the unread/count badge, or 0 if no badge is shown" type="integer" access="r">
+				<cocoa key="badgeCount"/>
+			</property>
+			<property name="display name is bold" code="pnDB" description="YES if the display name is currently showing bold, NO otherwise" type="boolean" access="r">
+				<cocoa key="displayNameIsBold"/>
+			</property>
+			<property name="selection point x" code="pnPx" description="The x-coordinate point on the screen where you can click to select the node. Only works properly if the node is visible on the screen." type="integer" access="r">
+				<cocoa key="nodePointX"/>
+			</property>
+			<property name="selection point y" code="pnPy" description="The y-coordinate point on the screen where you can click to select the node. Only works properly if the node is visible on the screen." type="integer" access="r">
+				<cocoa key="nodePointY"/>
+			</property>
+			<property name="checkbox point x" code="pnCx" description="The x-coordinate point on the screen where you can click to check the checkbox. Only works properly if the node is visible on the screen" type="integer" access="r">
+				<cocoa key="checkmarkPointX"/>
+			</property>
+			<property name="checkbox point y" code="pnCy" description="The y-coordinate point on the screen where you can click to check the checkbox. Only works properly if the node is visible on the screen" type="integer" access="r">
+				<cocoa key="checkmarkPointY"/>
+			</property>
+			<property name="visible" code="pvis" description="true if this row is completely visible, false if it is at all obscured" type="boolean">
+				<cocoa key="isVisible"/>
+			</property>
+		</class>
+		<class name="item list node" code="cILN" description="A node in the item list hierarchy" inherits="item">
+			<cocoa class="ASItemListNode"/>
+			<element description="The children of this element" type="item list node" access="r">
+				<cocoa key="children"/>
+				<accessor style="range"/>
+				<accessor style="index"/>
+			</element>
+			<property name="expandable" code="pILe" description="Whether this node can be expanded" type="boolean" access="r">
+				<cocoa key="isExpandable"/>
+			</property>
+			<property name="expanded" code="pnpE" description="Whether the node is currently expanded" type="boolean">
+				<cocoa key="isExpanded"/>
+			</property>
+			<property name="visible" code="pvis" description="Whether the node is currently visible on the screen. Setting this property to true scrolls the item list to make it visible if possible (ie if all of this node&apos;s ancestors are expanded)" type="boolean">
+				<cocoa key="isVisible"/>
+			</property>
+			<property name="represented record" code="pILR" description="The record represented by this node, displayed in this node&apos;s row in the item list. Will be missing if this node is a header node" type="object" access="r">
+				<cocoa key="representedRecord"/>
+			</property>
+			<property name="header name" code="pILh" description="The label for this group header node, if this node represents a group header" type="text" access="r">
+				<cocoa key="headerName"/>
+			</property>
+			<property name="unread count" code="UCnt" description="The badged count displayed in this header if it is a header node. 0 if it is not" type="integer" access="r">
+				<cocoa key="unreadCount"/>
+			</property>
+			<property name="selection point x" code="pnPx" description="The x coordinate of the center of the node&apos;s location on screen. Only useful if the node&apos;s row is actually visible on screen (not hidden under collapsed parents our by the scroll view)" type="integer" access="r">
+				<cocoa key="nodePointX"/>
+			</property>
+			<property name="selection point y" code="pnPy" description="The y coordinate of the center of the node&apos;s location on screen. Only useful if the node&apos;s row is actually visible on screen (not hidden under collapsed parents our by the scroll view)" type="integer" access="r">
+				<cocoa key="nodePointY"/>
+			</property>
+		</class>
+		<command name="sync" code="MSOEsync" description="Synchronize a folder or account.">
+			<direct-parameter description="The folder or account to sync.">
+				<type type="folder"/>
+				<type type="account"/>
+			</direct-parameter>
+		</command>
+		<command name="repair" code="MSOErepm" description="Repair message list of folder">
+			<direct-parameter description="The folder whose message list will be repaired (only applicable for folders belonging to IMAP accounts)." type="folder"/>
+		</command>
+		<command name="purge deleted items" code="MSOEpudi" description="Purge the deleted items in a folder">
+			<direct-parameter description="The folder whose deleted items will be purged (only applicable for folders belonging to IMAP accounts)." type="folder"/>
+		</command>
+		<command name="permanently delete" code="MSOEpdel" description="Permanently delete a message or folder i.e. without moving it to the deleted items folder (See delete command in the Standard Suite).">
+			<direct-parameter description="The message to delete." type="message"/>
+		</command>
+		<command name="empty cache" code="MSOEemCa" description="Empty the local cache of an exchange folder.">
+			<direct-parameter description="The exchange folder whose cache is to be emptied." type="folder"/>
+		</command>
+		<command name="import olm" code="MSOEimom" description="Import an olm archive.">
+			<cocoa class="ASImportOLMCommand"/>
+			<direct-parameter description="The olm file to import." type="file"/>
+			<result description="True if the import was successful, false otherwise." type="boolean"/>
+		</command>
+		<command name="import pst" code="MSOEimpt" description="Import a pst archive.">
+			<cocoa class="ASImportPSTCommand"/>
+			<direct-parameter description="The pst file to import." type="file"/>
+			<result description="True if the import was successful, false otherwise." type="boolean"/>
+		</command>
+		<command name="clear recent recipients" code="MSOEcrre" description="Remove all recent email recipients.">
+			<cocoa class="ASClearRecentRecipients"/>
+		</command>
+	</suite>
+	<suite name="Account Suite" code="OEAc" description="Classes and commands for Outlook account features.">
+		<enumeration name="security message digest algorithm" code="eMDA" description="The message digest algorithm for encryption.">
+			<enumerator name="SHA 512" code="S512" description="Secure Hash Algorithm (SHA-2 family) with digest size 512.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="SHA 384" code="S384" description="Secure Hash Algorithm (SHA-2 family) with digest size 384."/>
+			<enumerator name="SHA 256" code="S256" description="Secure Hash Algorithm (SHA-2 family) with digest size 256."/>
+			<enumerator name="SHA 1" code="SHA1" description="Secure Hash Algorithm (SHA-1 family)."/>
+		</enumeration>
+		<enumeration name="security symmetric encryption algorithm" code="eSEA" description="The message encryption algorithm for encryption.">
+			<enumerator name="AES 256" code="A256" description="Advanced Encryption Standard with 256-bit key."/>
+			<enumerator name="AES 192" code="A192" description="Advanced Encryption Standard with 192-bit key."/>
+			<enumerator name="AES 128" code="A128" description="Advanced Encryption Standard with 128-bit key."/>
+			<enumerator name="Triple DES" code="3DES" description="Triple Data Encryption Standard algorithm."/>
+		</enumeration>
+		<enumeration name="exchange account type" code="eEAT" description="The type of the exchange account (primary, delegated or other users folder).">
+			<enumerator name="primary account" code="ePrm" description="This is a primary account.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="delegated account" code="eDlg" description="This is a delegated account.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="other users folder account" code="eOth" description="This is another users folder acount.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="autodiscover results" code="ADRe" description="The results from an autodiscover command.">
+			<property name="primary smtp address" code="PSmp" description="The primary smtp address." type="text" access="r"/>
+			<property name="full name" code="fnam" description="The full name." type="text" access="r"/>
+			<property name="server" code="host" description="The server." type="text" access="r"/>
+			<property name="port" code="port" description="The port number." type="integer" access="r"/>
+			<property name="ldap server" code="ExLS" description="The ldap server." type="text" access="r"/>
+			<property name="use ssl" code="usss" description="Indicates whether a ssl connection is required." type="boolean" access="r"/>
+			<property name="oab manifest url" code="OABU" description="The url of the oab manifest." type="text" access="r"/>
+		</record-type>
+		<record-type name="folder storage" code="rFST">
+			<property name="name" code="pnam" type="text" access="r">
+				<cocoa key="name"/>
+			</property>
+			<property name="folder size" code="pFSm" type="number" access="r">
+				<cocoa key="size"/>
+			</property>
+			<property name="total size" code="pTSm" type="number" access="r">
+				<cocoa key="totalSize"/>
+			</property>
+		</record-type>
+		<record-type name="folder storage results" code="rFSR">
+			<property name="main folder" code="fsMF" type="folder storage" access="r">
+				<cocoa key="mainFolder"/>
+			</property>
+			<property name="subfolders" code="fsSF">
+				<cocoa key="subfolders"/>
+				<type type="folder storage" list="yes"/>
+			</property>
+		</record-type>
+		<enumeration name="role" code="fpRT">
+			<enumerator name="no role" code="frNR">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="owner" code="frOW">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="publishing editor" code="frPE">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="editor" code="frED">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="publishing author" code="frPA">
+				<cocoa integer-value="4"/>
+			</enumerator>
+			<enumerator name="author" code="frAU">
+				<cocoa integer-value="5"/>
+			</enumerator>
+			<enumerator name="nonediting author" code="frNA">
+				<cocoa integer-value="6"/>
+			</enumerator>
+			<enumerator name="reviewer" code="frRE">
+				<cocoa integer-value="7"/>
+			</enumerator>
+			<enumerator name="contributor" code="frCO">
+				<cocoa integer-value="8"/>
+			</enumerator>
+			<enumerator name="freebusy time only" code="frFB">
+				<cocoa integer-value="9"/>
+			</enumerator>
+			<enumerator name="freebusy and subject and location" code="frMI">
+				<cocoa integer-value="10"/>
+			</enumerator>
+			<enumerator name="custom role" code="frCU">
+				<cocoa integer-value="11"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="edit level" code="fpEL">
+			<enumerator name="edit none" code="fpEN">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="edit own" code="fpEO">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="edit all" code="fpEA">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="read level" code="fpRL">
+			<enumerator name="read none" code="fpRN">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="read freebusy" code="fpFB">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="read calendar summary" code="fpCS">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="read all" code="fpRA">
+				<cocoa integer-value="3"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="folder permissions user" code="pUSR">
+			<property name="user role" code="fpuR" description="If the role is set to something other than &quot;custom&quot; when setting permissions on a folder, the other settings are ignored and full presets for that role are applied." type="role">
+				<cocoa key="userRole"/>
+			</property>
+			<property name="read level" code="fpuL" type="read level">
+				<cocoa key="readLevel"/>
+			</property>
+			<property name="edit level" code="fpuE" type="edit level">
+				<cocoa key="editLevel"/>
+			</property>
+			<property name="delete level" code="fpuD" type="edit level">
+				<cocoa key="deleteLevel"/>
+			</property>
+			<property name="userID" code="fpuU" type="text">
+				<cocoa key="userID"/>
+			</property>
+			<property name="user name" code="unme" type="text">
+				<cocoa key="userName"/>
+			</property>
+			<property name="can create items" code="fpuC" type="boolean">
+				<cocoa key="canCreateItems"/>
+			</property>
+			<property name="can create subfolders" code="fpuS" type="boolean">
+				<cocoa key="canCreateSubfolders"/>
+			</property>
+			<property name="is folder visible" code="fpuV" type="boolean">
+				<cocoa key="isFolderVisible"/>
+			</property>
+			<property name="is folder contact" code="fpuO" type="boolean">
+				<cocoa key="isFolderContact"/>
+			</property>
+			<property name="is folder owner" code="fpuW" type="boolean">
+				<cocoa key="isFolderOwner"/>
+			</property>
+			<property name="user type" code="fpuT" type="permissions user type">
+				<cocoa key="userType"/>
+			</property>
+		</record-type>
+		<enumeration name="permissions user type" code="puTY">
+			<enumerator name="normal user" code="utNU">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="anonymous user" code="utAU">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="default user" code="utDU">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="autoreply data" code="OOFa">
+			<property name="enabled" code="ScEn" description="Whether autoreplies are sent" type="boolean">
+				<cocoa key="isEnabled"/>
+			</property>
+			<property name="send to external" code="aSTE" description="Whether autoreplies are sent to people outside of your company" type="boolean">
+				<cocoa key="sendExternalMessage"/>
+			</property>
+			<property name="send only to known" code="sTKO" description="Whether autoreplies to external recipients are only sent to known contacts" type="boolean">
+				<cocoa key="sendExternalToKnownOnly"/>
+			</property>
+			<property name="scheduled" code="aISC" description="Whether autoreplies are only sent between the times specified" type="boolean">
+				<cocoa key="isScheduled"/>
+			</property>
+			<property name="start on" code="asSO" description="The date to start sending autoreplies" type="date">
+				<cocoa key="startDate"/>
+			</property>
+			<property name="end on" code="asEO" description="The date to stop sending autoreplies" type="date">
+				<cocoa key="endDate"/>
+			</property>
+			<property name="autoreply message" code="asRM" description="The message to send to internal senders" type="text">
+				<cocoa key="autoreplyMessage"/>
+			</property>
+			<property name="external message" code="asEM" description="The message to send to external senders" type="text">
+				<cocoa key="externalMessage"/>
+			</property>
+		</record-type>
+		<enumeration name="shared mailbox type" code="eaMT">
+			<enumerator name="inbox folder" code="astI">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="calendar folder" code="astC">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="address book folder" code="astA">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="delegate permission" code="dpTy">
+			<enumerator name="none delegate permission" code="dpNo">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="editor delegate permission" code="dpEd">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="reviewer delegate permission" code="dpRe">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="author delegate permission" code="dpAu">
+				<cocoa integer-value="4"/>
+			</enumerator>
+			<enumerator name="custom delegate permission" code="dpCu" description="You can&apos;t set any permission as custom using this command">
+				<cocoa integer-value="5"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="delegate user info" code="DPus" description="Contains complete information about a delegate user">
+			<property name="calendar permission" code="DPca" type="delegate permission">
+				<cocoa key="delegatePermissionCalendar"/>
+			</property>
+			<property name="tasks permission" code="DPta" type="delegate permission">
+				<cocoa key="delegatePermissionTasks"/>
+			</property>
+			<property name="inbox permission" code="DPin" type="delegate permission">
+				<cocoa key="delegatePermissionInbox"/>
+			</property>
+			<property name="notes permission" code="DPno" type="delegate permission">
+				<cocoa key="delegatePermissionNotes"/>
+			</property>
+			<property name="contacts permission" code="DPco" type="delegate permission">
+				<cocoa key="delegatePermissionContacts"/>
+			</property>
+			<property name="delegate receives meeting invites" code="Drmi" type="boolean">
+				<cocoa key="delegateReceiveMeetingInvites"/>
+			</property>
+			<property name="delegate view private items" code="Dvpi" type="boolean">
+				<cocoa key="delegateViewPrivateItems"/>
+			</property>
+			<property name="delegate email address" code="dpEm" type="text">
+				<cocoa key="delegateEmailAddress"/>
+			</property>
+		</record-type>
+		<class name="account" code="cAct" description="An abstract class that represents an account. To create new accounts use eas account, exchange account, pop account or imap account." inherits="object">
+			<cocoa class="ASAccount"/>
+			<element description="The folders of an account." type="folder" access="r"/>
+			<element description="The mail folders of an account" type="mail folder"/>
+			<element description="The address books of an account." type="address book"/>
+			<element description="The calendars of an account." type="calendar"/>
+			<element description="The task folders of an account." type="task folder"/>
+			<element description="The note folders of an account." type="note folder"/>
+			<property name="name" code="pnam" description="The name of an account." type="text"/>
+			<property name="full name" code="fnam" description="The users display name." type="text">
+				<cocoa key="realName"/>
+			</property>
+			<property name="email address" code="emad" description="The e-mail address of an account." type="text"/>
+			<property name="user name" code="unme" description="The user name used to connect to an account." type="text">
+				<cocoa key="authUserID"/>
+			</property>
+			<property name="password" code="macp" description="The password for an account (write-only)." type="text" access="w" in-properties="no">
+				<cocoa key="authPassword"/>
+			</property>
+			<property name="server" code="host" description="The server used to connect to an account." type="text"/>
+			<property name="port" code="port" description="The port used to connect to an account." type="integer"/>
+			<property name="use ssl" code="usss" description="Indicates whether a SSL connection is used for an account." type="boolean">
+				<cocoa key="useSSL"/>
+			</property>
+			<property name="root folder" code="pRoo" description="The root folder of an account." type="mail folder" access="r"/>
+			<property name="inbox" code="pInb" description="The inbox folder of an account." type="mail folder" access="r"/>
+			<property name="drafts" code="pDrt" description="The drafts folder of an account. Some subclasses may allow writing this property." type="mail folder" access="r"/>
+			<property name="sent items" code="pSnt" description="The sent items folder of an account. Some subclasses may allow writing this property." type="mail folder" access="r"/>
+			<property name="deleted items" code="pDlt" description="The deleted items folder of an account. Some subclasses may allow writing this property." type="mail folder" access="r"/>
+			<property name="junk mail" code="pJnk" description="The junk mail folder of an account. Some subclasses may allow writing this property." type="mail folder" access="r"/>
+			<property name="outbox" code="pObx" description="The outbox folder of an account." type="mail folder" access="r"/>
+			<property name="default calendar" code="pAMC" description="The default calendar for the account" type="calendar" access="r">
+				<cocoa key="mainCalendar"/>
+			</property>
+			<property name="default address book" code="pAMA" description="The default address book for the account" type="address book" access="r">
+				<cocoa key="mainAddressBook"/>
+			</property>
+			<property name="default note folder" code="pAMN" description="The default note folder for the account" type="note folder" access="r">
+				<cocoa key="mainNoteFolder"/>
+			</property>
+			<property name="default task folder" code="pAMT" description="The default task folder for the account" type="task folder" access="r">
+				<cocoa key="mainTaskFolder"/>
+			</property>
+			<responds-to command="sync">
+				<cocoa method="handleSyncCommand:"/>
+			</responds-to>
+		</class>
+		<class name="exchange account" code="Eact" description="An exchange account." inherits="account">
+			<cocoa class="ASExchangeAccount"/>
+			<element description="The delegated accounts of an exchange account." type="delegated account"/>
+			<element description="The other users folder accounts opened for an exchange account." type="other users folder account">
+				<cocoa key="otherUsersFolders"/>
+			</element>
+			<element hidden="yes" description="Contacts in the Exchange Account&apos;s OAB. Only available implicitly by finding results in the contacts panel" type="contact" access="r">
+				<accessor style="id"/>
+			</element>
+			<property name="domain" code="ExDo" description="The domain of an exchange account." type="text">
+				<cocoa key="exchangeDomain"/>
+			</property>
+			<property name="exchange type" code="ExTp" description="The type of an exchange account." type="exchange account type" access="r"/>
+			<property name="is connected" code="ExCn" description="Indicates whether an exchange account is online." type="boolean" access="r">
+				<cocoa key="isAccountConnected"/>
+			</property>
+			<property name="principal" code="ExGI" description="The GSSAPI principal name (Kerberos v5)." type="text">
+				<cocoa key="authGSSAPIPrincipal"/>
+			</property>
+			<property name="gal download directory" code="ExGD" description="The directory from which to download Offline Address Book files" type="text">
+				<cocoa key="oabManifestURL"/>
+			</property>
+			<property name="receive partial messages" code="ExPm" description="Indicates whether an exchange account gets partial messages." type="boolean"/>
+			<property name="sign message by default" code="SecS" description="Indicates whether outgoing messages are signed by default." type="boolean">
+				<cocoa key="securitySignByDefault"/>
+			</property>
+			<property name="include signing certificate" code="SecD" description="Indicates whether outgoing messages include your signing certificate." type="boolean">
+				<cocoa key="securityIncludeSigningCert"/>
+			</property>
+			<property name="encrypt message by default" code="SecE" description="Indicates whether outgoing messages are encrypted by default." type="boolean">
+				<cocoa key="securityEncryptByDefault"/>
+			</property>
+			<property name="message digest algorithm" code="SecA" description="The message digest algorithm to use." type="security message digest algorithm">
+				<cocoa key="securityMessageDigestAlgorithm"/>
+			</property>
+			<property name="symmetric encryption algorithm" code="SeAl" description="The symmetric encryption algorithm to use." type="security symmetric encryption algorithm">
+				<cocoa key="securitySymmetricEncryptionAlgorithm"/>
+			</property>
+			<property name="use kerberos authentication" code="Kerb" description="Indicates whether kerberos authentication is used for an account." type="boolean"/>
+			<property name="ldap server" code="ExLS" description="The LDAP server for an exchange account." type="text">
+				<cocoa key="exchangeLDAPServer"/>
+			</property>
+			<property name="ldap port" code="ExLP" description="The LDAP port for an exchange account." type="integer">
+				<cocoa key="exchangeLDAPPort"/>
+			</property>
+			<property name="ldap use ssl" code="LDSL" description="Indicates whether a SSL connection is used connect to the LDAP server." type="boolean">
+				<cocoa key="exchangeLDAPUseSSL"/>
+			</property>
+			<property name="ldap needs authentication" code="LDAu" description="Indicates whether authentication is needed for  connecting to the LDAP server." type="boolean">
+				<cocoa key="ldapAuthenticate"/>
+			</property>
+			<property name="ldap search base" code="LDSB" description="The search base of the LDAP server." type="text"/>
+			<property name="ldap max entries" code="LDMX" description="The maximum number of entires to get from the LDAP server." type="integer"/>
+			<property name="background autodiscover" code="pBAD" description="Indicates whether background autodisover is enabled or not." type="boolean"/>
+			<property name="oab" code="eaDS" description="The directory source for this account&apos;s Offline Address Book, if it has one. Use with the contacts panel to search the OAB." type="directory source" access="r">
+				<cocoa key="oabDirectorySource"/>
+			</property>
+			<property name="rooms" code="eaRD" description="The directory source for this account&apos;s meeting room index, if it has one. Use with the contacts panel to run searches" type="directory source" access="r">
+				<cocoa key="meetingRoomsDirectorySource"/>
+			</property>
+			<property name="server version" code="eaSV" description="The version of the Exchange server." type="text" access="r"/>
+			<property name="last password expiration check time" code="eaLP" description="The time the password expiration was last checked." type="date" access="r"/>
+			<property name="is microsoft online" code="eaMO" description="Indicates whether an account is a Microsoft Online account." type="boolean" access="r"/>
+			<property name="autoreply data" code="eaAD" description="Autoreply (Out of Office) settings for this account" type="autoreply data">
+				<cocoa key="autoreplyData"/>
+			</property>
+			<!-- (see MacBU Main 243013)
+			<property hidden="yes" name="server side rule list" code="ssrL" description="server side rule collection of the exchange account" type="server side rule collection">
+				<cocoa key="serverSideRuleCollection"/>
+			</property>
+-->
+			<responds-to command="search">
+				<cocoa method="handleSearchCommand:"/>
+			</responds-to>
+			<responds-to command="query freebusy">
+				<cocoa method="handleQueryFreebusyCommand:"/>
+			</responds-to>
+			<responds-to command="image search">
+				<cocoa method="handleImageSearchCommand:"/>
+			</responds-to>
+			<responds-to command="query password expiration">
+				<cocoa method="handlePasswordExpirationCommand:"/>
+			</responds-to>
+			<responds-to command="query organization information">
+				<cocoa method="handleQueryOrganizationInformationCommand:"/>
+			</responds-to>
+			<responds-to command="query folder size">
+				<cocoa method="handleFolderStorageCommand:"/>
+			</responds-to>
+			<responds-to command="query folder permissions">
+				<cocoa method="handleGetFolderPermissionsCommand:"/>
+			</responds-to>
+			<responds-to command="method">
+				<cocoa method="handleSetFolderPermissionsCommand:"/>
+			</responds-to>
+			<responds-to command="set folder permissions">
+				<cocoa method="handleSetFolderPermissionsCommand:"/>
+			</responds-to>
+			<responds-to command="query autoreply data">
+				<cocoa method="handleGetAutoreplyDataCommand:"/>
+			</responds-to>
+			<responds-to command="set autoreply data">
+				<cocoa method="handleSetAutoreplyDataCommand:"/>
+			</responds-to>
+			<responds-to command="verify mailbox">
+				<cocoa method="handleVerifyMailboxCommand:"/>
+			</responds-to>
+			<responds-to command="resolve names">
+				<cocoa method="handleResolveNamesCommand:"/>
+			</responds-to>
+			<responds-to command="download oab now">
+				<cocoa method="handleDownloadOabNowCommand:"/>
+			</responds-to>
+			<responds-to command="get delegate users">
+				<cocoa method="handleGetDelegateUsersCommand:"/>
+			</responds-to>
+			<responds-to command="update delegate users">
+				<cocoa method="handleUpdateDelegateUsersCommand:"/>
+			</responds-to>
+			<responds-to command="add delegate users">
+				<cocoa method="handleAddDelegateUsersCommand:"/>
+			</responds-to>
+			<responds-to command="delete delegate users">
+				<cocoa method="handleDeleteDelegateUsersCommand:"/>
+			</responds-to>
+		</class>
+		<class name="pop account" code="pact" description="A POP account." inherits="account">
+			<cocoa class="ASPopAccount"/>
+			<property name="use secure password" code="scPw" description="Indicates whether a POP account always sends the password securely." type="boolean">
+				<cocoa key="alwaysUseSecurePassword"/>
+			</property>
+			<property name="delete messages from server" code="lvOS" description="Indicates whether a POP account deletes messages on the server after downloading." type="boolean">
+				<cocoa key="popDeleteMessagesFromServer"/>
+			</property>
+			<property name="delete messages from server after" code="dfsD" description="Number of days after which the downloaded messages will be deleted from the server." type="integer">
+				<cocoa key="popDeleteMessagesAfterDays"/>
+			</property>
+			<property name="delete messages from server when deleted from computer" code="dfsS" description="Indicates whether messages will be deleted from the server when they are deleted from the computer." type="boolean">
+				<cocoa key="popDeleteOnServerAfterLocalDelete"/>
+			</property>
+			<property name="smtp server" code="Smtp" description="The SMTP server used to send mail." type="text"/>
+			<property name="smtp port" code="SMTp" description="The port to use when connecting to the SMTP server." type="integer"/>
+			<property name="smtp use ssl" code="SMTs" description="Indicates whether a SSL connection is used connect to the SMTP server." type="boolean">
+				<cocoa key="smtpUseSSL"/>
+			</property>
+			<property name="smtp needs authentication" code="SMTa" description="Indicates whether authentication is needed for sending mail using the SMTP server." type="boolean">
+				<cocoa key="smtpRequiresAuth"/>
+			</property>
+			<property name="smtp use account authentication" code="SMTu" description="Indicates whether to use the account user name and password for authentication with the SMTP server." type="boolean">
+				<cocoa key="smtpAuthAsIncoming"/>
+			</property>
+			<property name="smtp user name" code="SMTc" description="The user name used to connect to the SMTP server." type="text">
+				<cocoa key="smtpAuthUserID"/>
+			</property>
+			<property name="smtp password" code="SMTw" description="The password used to connect to the SMTP server (write-only)." type="text" access="w" in-properties="no">
+				<cocoa key="smtpAuthPassword"/>
+			</property>
+		</class>
+		<class name="imap account" code="iact" description="An IMAP account." inherits="account">
+			<cocoa class="ASImapAccount"/>
+			<property name="use secure password" code="scPw" description="Indicates whether an IMAP account always sends the password securely." type="boolean">
+				<cocoa key="alwaysUseSecurePassword"/>
+			</property>
+			<property name="root folder path" code="rtFp" description="The path to an IMAP account&apos;s root folder." type="text">
+				<cocoa key="imapRootFolderPath"/>
+			</property>
+			<property name="download message bodies" code="iDmB" description="Indicates if message bodies are downloaded completely." type="boolean">
+				<cocoa key="imapAlwaysDownloadBodies"/>
+			</property>
+			<property name="download complete messages in inbox only" code="iCpM" description="Indicates if only messages in Inbox are downloaded completely." type="boolean">
+				<cocoa key="imapAlwaysDownloadBodiesOnlyInInbox"/>
+			</property>
+			<property name="imap idle" code="iLvS" description="Indicates whether to enable idle support." type="boolean">
+				<cocoa key="imapMailboxIdle"/>
+			</property>
+			<property name="imap idle timeout" code="iLST" description="Indicates whether IMAP idle timeout is enabled or not." type="boolean"/>
+			<property name="imap idle timeout time" code="iLTV" description="Number of minutes of inactivity after which the connection to the server times out." type="integer"/>
+			<property name="messages expire after" code="iMEA" description="Number of days after which downloaded messages are considered expired." type="integer">
+				<cocoa key="imapEmptyMessagesOlderThanDays"/>
+			</property>
+			<property name="delete expired messages on quit" code="iDEM" description="Indicates whether expired messages are deleted when quitting." type="boolean">
+				<cocoa key="imapEmptyMessagesOlderThan"/>
+			</property>
+			<property name="delete all messages on quit" code="iDAQ" description="Indicates wether all messages are deleted when quitting." type="boolean">
+				<cocoa key="imapEmptyAllMessages"/>
+			</property>
+			<property name="empty deleted items folder on quit" code="iDIQ" description="Indicates whether the messages in the deleted items folder are deleted when quitting." type="boolean">
+				<cocoa key="imapEmptyDeletedItemsOnQuit"/>
+			</property>
+			<property name="purge messages on quit" code="iPMQ" description="Indicates whether messages marked as deleted are permanently erased on quit." type="boolean">
+				<cocoa key="imapPurgeOnQuit"/>
+			</property>
+			<property name="store sent items on server" code="iUSI" description="Indicates whether sent messages will be stored on the IMAP server." type="boolean">
+				<cocoa key="imapUseSpecialFolderSentItems"/>
+			</property>
+			<property name="store drafts on server" code="iUDF" description="Indicates whether draft messages will be stored on the IMAP server." type="boolean">
+				<cocoa key="imapUseSpecialFolderDrafts"/>
+			</property>
+			<property name="store deleted items on server" code="iUDI" description="Indicates whether deleted messages will be stored on the IMAP server." type="boolean">
+				<cocoa key="imapUseSpecialFolderDeletedItems"/>
+			</property>
+			<property name="store junk mail on server" code="iUJM" description="Indicates whether junk mail will be stored on the IMAP server." type="boolean">
+				<cocoa key="imapUseSpecialFolderJunkMail"/>
+			</property>
+			<property name="smtp server" code="Smtp" description="The SMTP server used to send mail." type="text"/>
+			<property name="smtp port" code="SMTp" description="The port to use when connecting to the SMTP server." type="integer"/>
+			<property name="smtp use ssl" code="SMTs" description="Indicates whether a SSL connection is used connect to the SMTP server." type="boolean">
+				<cocoa key="smtpUseSSL"/>
+			</property>
+			<property name="smtp needs authentication" code="SMTa" description="Indicates whether authentication is needed for sending mail using the SMTP server." type="boolean">
+				<cocoa key="smtpRequiresAuth"/>
+			</property>
+			<property name="smtp use account authentication" code="SMTu" description="Indicates whether to use the account user name and password for authentication with the SMTP server." type="boolean">
+				<cocoa key="smtpAuthAsIncoming"/>
+			</property>
+			<property name="smtp user name" code="SMTc" description="The user name used to connect to the SMTP server." type="text">
+				<cocoa key="smtpAuthUserID"/>
+			</property>
+			<property name="smtp password" code="SMTw" description="The password used to connect to the SMTP server (write-only)." type="text" access="w" in-properties="no">
+				<cocoa key="smtpAuthPassword"/>
+			</property>
+			<property name="sent items" code="pSnt" description="The sent items folder of an imap account." type="mail folder"/>
+			<property name="drafts" code="pDrt" description="The drafts folder of an imap account." type="mail folder"/>
+			<property name="junk mail" code="pJnk" description="The junk mail folder of an imap account." type="mail folder"/>
+			<property name="deleted items" code="pDlt" description="The deleted items folder of an imap account." type="mail folder"/>
+			<property name="save sent items" code="iSSI" description="Indicates whether whether we will save sent items." type="boolean">
+				<cocoa key="saveSentItems"/>
+			</property>
+		</class>
+		<class name="ldap account" code="Lact" description="A LDAP account." inherits="object">
+			<cocoa class="ASLdapAccount"/>
+			<property name="name" code="pnam" description="The name of a LDAP account." type="text"/>
+			<property name="user name" code="unme" description="The user name used to connect to a LDAP account." type="text">
+				<cocoa key="authUserID"/>
+			</property>
+			<property name="password" code="macp" description="The password for a LDAP account (write-only)." type="text" access="w" in-properties="no">
+				<cocoa key="authPassword"/>
+			</property>
+			<property name="server" code="host" description="The server used to connect to a LDAP account." type="text"/>
+			<property name="port" code="port" description="The port used to connect to a LDAP account." type="integer"/>
+			<property name="use ssl" code="usss" description="Indicates whether a SSL connection is used for a LDAP account." type="boolean">
+				<cocoa key="useSSL"/>
+			</property>
+			<property name="needs authentication" code="ndAu" description="Indicates whether authentication is needed for  connecting to a LDAP server." type="boolean">
+				<cocoa key="authenticate"/>
+			</property>
+			<property name="use kerberos authentication" code="Kerb" description="Indicates whether kerberos authentication is used for a LDAP account." type="boolean">
+				<cocoa key="useKerberos"/>
+			</property>
+			<property name="principal" code="ExGI" description="The GSSAPI principal name (Kerberos v5)." type="text">
+				<cocoa key="authGSSAPIPrincipal"/>
+			</property>
+			<property name="search timeout" code="ShTi" description="The number of seconds to wait before timing out." type="integer"/>
+			<property name="search base" code="ShBa" description="The search base of a LDAP account." type="text"/>
+			<property name="use simple search" code="ShSi" description="Indicates whether the server should use simplied search string." type="boolean">
+				<cocoa key="simpleSearch"/>
+			</property>
+			<property name="maximum entries" code="MxEn" description="The maximum number of entires to get from the server for a LDAP account." type="integer">
+				<cocoa key="maxEntries"/>
+			</property>
+			<responds-to command="search">
+				<cocoa method="handleSearchCommand:"/>
+			</responds-to>
+		</class>
+		<class name="delegated account" code="Dact" description="A delegated exchange account." inherits="exchange account">
+			<cocoa class="ASDelegatedAccount"/>
+			<property name="exchange account" code="Eact" description="The exchange account which this account belongs to." type="exchange account" access="r"/>
+		</class>
+		<class name="other users folder account" code="Oact" description="An other users folder account." inherits="exchange account">
+			<cocoa class="ASOtherUsersFolder"/>
+			<property name="exchange account" code="Eact" description="The exchange account which this account belongs to." type="exchange account" access="r"/>
+			<property name="inbox open" code="pInO" description="Indicates whether the other users Inbox is open." type="boolean"/>
+			<property name="address book open" code="pABO" description="Indicates whether the other users Address Book is open." type="boolean"/>
+			<property name="calendar open" code="pCaO" description="Indicates whether the other users Calendar is open." type="boolean"/>
+		</class>
+		<command name="autodiscover" code="OEAcAuDs" description="Autodiscover the settings for an exchange account.">
+			<cocoa class="ASAutodiscoverCommand"/>
+			<parameter name="email address" code="emad" description="The email address of the exchange account whose settings are to be autodiscovered." type="text">
+				<cocoa key="emailAddress"/>
+			</parameter>
+			<parameter name="domain" code="ExDo" description="The domain of the exchange account whose settings are to be autodiscovered." type="text" optional="yes">
+				<cocoa key="domain"/>
+			</parameter>
+			<parameter name="user name" code="unme" description="The user name of the exchange account whose settings are to be autodiscovered." type="text">
+				<cocoa key="userName"/>
+			</parameter>
+			<parameter name="password" code="macp" description="The password of the exchange account whose settings are to be autodiscovered." type="text" optional="yes">
+				<cocoa key="password"/>
+			</parameter>
+			<result description="The results from the autodiscover." type="autodiscover results"/>
+		</command>
+		<command name="query password expiration" code="OEAcQuPe" description="Query the password expiration for this account.">
+			<direct-parameter description="The account" type="exchange account"/>
+			<result description="Date of the password expiration or missing value if it never expires.">
+				<type type="missing value"/>
+				<type type="date"/>
+			</result>
+		</command>
+		<command name="query folder size" code="OEAcQuFS">
+			<direct-parameter description="The account to ask. " type="exchange account"/>
+			<parameter name="folder" code="pfFP" description="The folder whose size you want to find. Must belong to the targeted account." type="folder">
+				<cocoa key="folder"/>
+			</parameter>
+			<result type="folder storage results"/>
+		</command>
+		<command name="query folder permissions" code="OEAcQuFP">
+			<direct-parameter type="exchange account"/>
+			<parameter name="folder" code="pfFP" description="The folder whose permissions you want to find. Must belong to the targeted account." type="folder">
+				<cocoa key="folder"/>
+			</parameter>
+			<result>
+				<type type="folder permissions user" list="yes"/>
+			</result>
+		</command>
+		<command name="set folder permissions" code="OEAcSeFP">
+			<direct-parameter type="exchange account"/>
+			<parameter name="folder" code="pfFP" description="The folder whose size you want to find. Must belong to the targeted account." type="folder">
+				<cocoa key="folder"/>
+			</parameter>
+			<parameter name="new users" code="pfNU">
+				<cocoa key="newUsers"/>
+				<type type="folder permissions user" list="yes"/>
+			</parameter>
+		</command>
+		<command name="query autoreply data" code="OEAcQuAD">
+			<direct-parameter type="exchange account"/>
+			<result type="autoreply data"/>
+		</command>
+		<command name="set autoreply data" code="OEAcSeAD">
+			<direct-parameter type="exchange account"/>
+			<parameter name="new data" code="adND" type="autoreply data">
+				<cocoa key="autoreplyData"/>
+			</parameter>
+		</command>
+		<command name="verify mailbox" code="OEAcveMB">
+			<direct-parameter type="exchange account"/>
+			<parameter name="mailbox" code="ipMB" type="shared mailbox type">
+				<cocoa key="mailbox"/>
+			</parameter>
+			<parameter name="user address" code="ipUA" type="text">
+				<cocoa key="userAddress"/>
+			</parameter>
+			<result description="0 for success; any other value is an error code" type="number"/>
+		</command>
+		<command name="download oab now" code="OEAcDOab" description="Trigger offline address book download.">
+			<direct-parameter description="The exchange account." type="exchange account"/>
+		</command>
+		<command name="get delegate users" code="OEAcGeDP" description="get all delegate users of the exchange account">
+			<direct-parameter type="exchange account"/>
+			<result>
+				<type type="delegate user info" list="yes"/>
+			</result>
+		</command>
+		<command name="update delegate users" code="OEAcSeDP" description="update a list of delegates with delegate permissions of exchange account. By default &quot;send meeting messages to&quot; is set to &quot;Delegate &amp; copy me&quot;">
+			<direct-parameter type="exchange account"/>
+			<parameter name="delegate users" code="duCI" description="list of delegate users to be updated">
+				<cocoa key="delegateUsers"/>
+				<type type="delegate user info" list="yes"/>
+			</parameter>
+		</command>
+		<command name="add delegate users" code="OEAcAdDP" description="add a list of delegates in exchange account. By default &quot;send meeting messages to&quot; is set to &quot;Delegate &amp; copy me&quot;">
+			<direct-parameter type="exchange account"/>
+			<parameter name="delegate users" code="duCI" description="list of delegate users to be updated">
+				<cocoa key="delegateUsers"/>
+				<type type="delegate user info" list="yes"/>
+			</parameter>
+		</command>
+		<command name="delete delegate users" code="OEAcDeDP" description="delete list of delegates of exchange account using full email address">
+			<direct-parameter type="exchange account"/>
+			<parameter name="delegate emails" code="ipUA" description="full email address of the delegates we want to delete">
+				<cocoa key="delegateEmails"/>
+				<type type="text" list="yes"/>
+			</parameter>
+		</command>
+	</suite>
+	<suite name="Mail Suite" code="mail" description="Classes and commands for Outlook mail features.">
+		<enumeration name="recipient type" code="eRTy" description="Type of a recipient (to, cc, bcc).">
+			<enumerator name="to recipient type" code="RTto" description="To recipient.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="cc recipient type" code="RTcc" description="CC (carbon copy) recipient.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="bcc recipient type" code="RTbc" description="BCC (blind carbon copy) recipient.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="meeting message type" code="mMTy" description="The type of the meeting message (request, response, etc.)">
+			<enumerator name="request meeting type" code="MTrq" description="Meeting request (invite, update).">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="response meeting type" code="MTre" description="Meeting response message.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="cancellation meeting type" code="MTca" description="Meeting cancellation message">
+				<cocoa integer-value="5"/>
+			</enumerator>
+			<enumerator name="counter proposal meeting type" code="MTco" description="Meeting response with a proposed new time.">
+				<cocoa integer-value="7"/>
+			</enumerator>
+		</enumeration>
+		<class name="recipient" code="rcpt" description="An e-mail recipient." inherits="item">
+			<cocoa class="ASRecipient"/>
+			<property name="email address" code="emad" description="The e-mail address of a recipient." type="email address"/>
+			<property name="type" code="type" description="The type of a recipient (to, cc, bcc)." type="recipient type" access="r"/>
+		</class>
+		<class name="mail folder" code="cMFo" description="A mail folder. It contains e-mails." inherits="folder">
+			<cocoa class="ASMailFolder"/>
+			<element description="The messages that are filed in a mail folder." type="message" access="r"/>
+			<element description="The incoming messages filed in a mail folder." type="incoming message"/>
+			<element description="The outgoing messages filed in a mail folder." type="outgoing message"/>
+			<element description="The incoming meeting messages in a mail folder." type="meeting message" access="r"/>
+			<property name="unread count" code="UCnt" description="The number of unread messages in a folder." type="integer" access="r"/>
+		</class>
+		<class name="message" code="msg " description="An e-mail message." inherits="todoable object">
+			<cocoa class="ASMessage"/>
+			<element description="All the recipients of a message (to, cc, bcc)." type="recipient" access="r"/>
+			<element description="Recipients of a message in the &quot;To&quot; field." type="to recipient"/>
+			<element description="Recipients of a message in the &quot;Cc&quot; field." type="cc recipient"/>
+			<element description="Recipients of a message in the &quot;Bcc&quot; field." type="bcc recipient"/>
+			<element description="The attachments of a message." type="attachment"/>
+			<property name="subject" code="subj" description="The subject of a message." type="text"/>
+			<property name="content" code="ctnt" description="The HTML content of a message." type="text"/>
+			<property name="plain text content" code="PlTC" description="The content of a message as plain text." type="text"/>
+			<property name="time received" code="rTim" description="The time at which a message was received." type="date" access="r">
+				<cocoa key="receivedTime"/>
+			</property>
+			<property name="time sent" code="tims" description="The time at which a message was sent." type="date" access="r">
+				<cocoa key="sentTime"/>
+			</property>
+			<property name="sender" code="sndr" description="The e-mail address of the sender of a message." type="email address"/>
+			<property name="priority" code="prty" description="The priority of a message." type="priority"/>
+			<property name="headers" code="pMHd" description="The header of a message." type="text" access="r"/>
+			<property name="source" code="mSrc" description="The raw source text of a message." type="text"/>
+			<property name="has html" code="pHtm" description="Indicates whether a message has html text?" type="boolean" access="r">
+				<cocoa key="hasHTML"/>
+			</property>
+			<property name="modification date" code="asmo" description="The date on which a message was last modified." type="date" access="r">
+				<cocoa key="modDate"/>
+			</property>
+			<property name="smime signed" code="smSn" description="Indicates whether a message is signed?" type="boolean">
+				<cocoa key="smimeSigned"/>
+			</property>
+			<property name="smime encrypted" code="smEn" description="Indicates whether a message is encrypted?" type="boolean">
+				<cocoa key="smimeEncrypted"/>
+			</property>
+			<property name="is meeting" code="pMeM" description="Indicates whether  a message is a meeting invite/update?" type="boolean" access="r">
+				<cocoa key="isMeetingMessage"/>
+			</property>
+			<property name="folder" code="cFld" description="The folder in which a message is filed." type="mail folder" access="r"/>
+			<property name="account" code="cAct" description="The account associated with a message." type="account"/>
+			<property name="is read" code="pRed" description="Indicates whether a message has been read." type="boolean"/>
+			<property name="is marked for delete" code="pMfd" description="Indicates whether a message is marked for delete." type="boolean"/>
+			<property name="replied to" code="pRpT" description="Indicates whether a message has been replied to." type="boolean" access="r"/>
+			<property name="replied to all" code="pRpA" description="Indicates whether a message has been replied to all." type="boolean" access="r"/>
+			<property name="forwarded" code="pFwd" description="Indicates whether a message has been forwarded." type="boolean" access="r"/>
+			<property name="redirected" code="pRDr" description="Indicates whether a message has been redirected." type="boolean" access="r"/>
+			<property name="edited" code="pEdt" description="Indicates whether a message has been edited." type="boolean" access="r"/>
+			<property name="exchange id" code="ExID" description="The exchange identifier of a message (only applicable for messages belonging to exchange accounts)." type="text" access="r">
+				<cocoa key="exchangeOrEasID"/>
+			</property>
+			<property name="imap uid" code="ImID" description="The IMAP UID of a message (only applicable for messages belonging to IMAP accounts)." type="integer" access="r">
+				<cocoa key="imapUID"/>
+			</property>
+			<property name="is partially downloaded" code="pPar" description="Indicates whether a message is partially downloaded." type="boolean" access="r"/>
+			<property name="is rights protected" code="pRig" description="Indicates whether a message is rights protected." type="boolean" access="r">
+				<cocoa key="isRightsProtectedMessage"/>
+			</property>
+			<property name="is read receipt requested" code="pRRR" description="Indicates whether the message has a read receipt requested." type="boolean" access="r">
+				<cocoa key="isReadReceiptRequested"/>
+			</property>
+			<property name="send read receipt" code="pSRR" description="Indicates whether a read receipt response can be sent for a message. This needs to be set before marking a message as read." type="boolean">
+				<cocoa key="sendReadReceipt"/>
+			</property>
+			<responds-to command="print">
+				<cocoa method="handlePrintCommand:"/>
+			</responds-to>
+			<responds-to command="send">
+				<cocoa method="handleSendCommand:"/>
+			</responds-to>
+			<responds-to command="reply to">
+				<cocoa method="handleReplyToCommand:"/>
+			</responds-to>
+			<responds-to command="forward">
+				<cocoa method="handleForwardCommand:"/>
+			</responds-to>
+			<responds-to command="open">
+				<cocoa method="handleOpenCommand:"/>
+			</responds-to>
+			<responds-to command="permanently delete">
+				<cocoa method="handlePermanentlyDeleteCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+		<class name="incoming message" code="inm " description="A message recieved by the user." inherits="message">
+			<cocoa class="ASIncomingMessage"/>
+		</class>
+		<class name="outgoing message" code="outm" description="A message created by the user." inherits="message">
+			<cocoa class="ASOutgoingMessage"/>
+			<property name="was sent" code="wSnt" description="Indicates whether a outgoing message has been sent." type="boolean" access="r"/>
+		</class>
+		<class name="to recipient" code="trcp" description="An e-mail recipient in the &quot;To&quot; field." inherits="recipient">
+			<cocoa class="ASRecipient"/>
+		</class>
+		<class name="cc recipient" code="crcp" description="An e-mail recipient in the &quot;Cc&quot; field." inherits="recipient">
+			<cocoa class="ASRecipient"/>
+		</class>
+		<class name="bcc recipient" code="brcp" description="An e-mail recipient in the &quot;Bcc&quot; field." inherits="recipient">
+			<cocoa class="ASRecipient"/>
+		</class>
+		<class name="meeting message" code="mtME" description="A meeting message recieved by the user." inherits="incoming message">
+			<cocoa class="ASMeetingMessage"/>
+			<property name="type" code="type" description="The type of the meeting message (request, response, etc.)" type="meeting message type" access="r"/>
+			<property name="meeting" code="mTMg" description="The meeting data from the meeting message." type="calendar event" access="r"/>
+			<responds-to command="accept invite">
+				<cocoa method="handleAcceptInviteCommand:"/>
+			</responds-to>
+			<responds-to command="accept tentatively invite">
+				<cocoa method="handleTentativelyAcceptInviteCommand:"/>
+			</responds-to>
+			<responds-to command="decline invite">
+				<cocoa method="handleDeclineInviteCommand:"/>
+			</responds-to>
+		</class>
+		<command name="send" code="mailsend" description="Send e-mail messages.">
+			<direct-parameter description="The message to send." type="message"/>
+		</command>
+		<command name="reply to" code="OEMamRpl" description="Create a reply message.">
+			<direct-parameter description="The message to reply to." type="message"/>
+			<parameter name="opening window" code="ropw" description="Should the reply message be opened in a window? Default is to show the window." type="boolean" optional="yes">
+				<cocoa key="openingWindow"/>
+			</parameter>
+			<parameter name="reply to all" code="rpal" description="Whether to reply to all recipients of the message. Default it to reply to the sender only." type="boolean" optional="yes">
+				<cocoa key="replyToAll"/>
+			</parameter>
+			<result description="The reply message." type="message"/>
+		</command>
+		<command name="forward" code="OEMamFwd" description="Creates a forwarded message.">
+			<direct-parameter description="The message to forward." type="message"/>
+			<parameter name="to" code="insh" description="The recipients of the forwarded message (comma or colon separated text)." type="text" optional="yes">
+				<cocoa key="recipients"/>
+			</parameter>
+			<parameter name="opening window" code="ropw" description="Should the forwarded message be opened in a window? Default is to show the window." type="boolean" optional="yes">
+				<cocoa key="openingWindow"/>
+			</parameter>
+			<result description="The message to be forwarded." type="message"/>
+		</command>
+		<command name="accept invite" code="OEMamAcc" description="Accepts a given incoming meeting message. ">
+			<direct-parameter description="The meeting invite/update to accept." type="meeting message"/>
+			<parameter name="sending response" code="aaSR" description="Should the acceptance response message be sent back to the organizer." type="boolean" optional="yes">
+				<cocoa key="sendingResponse"/>
+			</parameter>
+			<parameter name="comment" code="aaWC" description="When sending responses, the text of the response body (in HTML)" type="text" optional="yes">
+				<cocoa key="withComment"/>
+			</parameter>
+		</command>
+		<command name="accept tentatively invite" code="OEMamAcT" description="Accepts tentatively a given incoming meeting message. ">
+			<direct-parameter description="The meeting invite/update to accept." type="meeting message"/>
+			<parameter name="sending response" code="aaSR" description="Should the acceptance response message be sent back to the organizer." type="boolean" optional="yes">
+				<cocoa key="sendingResponse"/>
+			</parameter>
+			<parameter name="comment" code="aaWC" description="When sending responses, the text of the response body (in HTML)" type="text" optional="yes">
+				<cocoa key="withComment"/>
+			</parameter>
+		</command>
+		<command name="decline invite" code="OEMamDec" description="Declines a given incoming meeting message. ">
+			<direct-parameter description="The meeting invite/update to decline." type="meeting message"/>
+			<parameter name="sending response" code="aaSR" description="Should the decline response message be sent back to the organizer." type="boolean" optional="yes">
+				<cocoa key="sendingResponse"/>
+			</parameter>
+			<parameter name="comment" code="aaWC" description="When sending responses, the text of the response body (in HTML)" type="text" optional="yes">
+				<cocoa key="withComment"/>
+			</parameter>
+		</command>
+		<command hidden="yes" name="create new email" code="OEMaNEml" description="Create a new email.">
+			<cocoa class="ASCreateNewEmail"/>
+			<direct-parameter description="The email address of the person to send the email to." type="text"/>
+		</command>
+		<command name="import eml" code="MSOEimem" description="Import an eml file.">
+			<cocoa class="ASImportEMLCommand"/>
+			<direct-parameter description="The eml file to import." type="file"/>
+			<parameter name="to" code="insh" description="The mail folder where the eml file will be imported." type="location specifier" optional="yes">
+				<cocoa key="Location"/>
+			</parameter>
+			<result description="The incoming message created by the import." type="incoming message"/>
+		</command>
+	</suite>
+	<suite name="Contact Suite" code="OECo" description="Classes and commands for Outlook contact features.">
+		<enumeration name="contact email address type" code="EATy" description="The type of e-mail address.">
+			<enumerator name="home" code="eHme" description="Home e-mail address.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="work" code="eWrk" description="Work e-mail address.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="other" code="eOth" description="Other e-mail address.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="contact email address" code="rCEA" description="An e-mail address for a contact.">
+			<property name="address" code="radd" description="The e-mail address." type="text"/>
+			<property name="type" code="type" description="The type of a contact e-mail address." type="contact email address type"/>
+		</record-type>
+		<enumeration name="contact IM address type" code="IMTy" description="The type of instant messaging address.">
+			<enumerator name="dot net" code="eDNt" description="Dot net IM address.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="SIP" code="eSIp" description="SIP IM address.">
+				<cocoa integer-value="4"/>
+			</enumerator>
+			<enumerator name="im other" code="eIOt" description="Other IM address.">
+				<cocoa integer-value="5"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="contact IM address" code="rIMA" description="An IM address for a contact.">
+			<property name="address" code="radd" description="The IM address." type="text"/>
+			<property name="type" code="type" description="The type of a contact IM address." type="contact IM address type"/>
+		</record-type>
+		<enumeration name="contact display type" code="oCDT" description="Describes what sort of contact this is (person, Distribution list, meeting room, etc)">
+			<enumerator name="person" code="cdtP" description="This contact is a person. The default option if no other information is available.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="distribution list" code="cdtD" description="This contact is a distribution list.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="private distribution list" code="cdPD" description="This contact is a private distribution list.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="meeting room" code="cdpR" description="This contact is a meeting room.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="equipment" code="cpdE" description="This contact is a piece of equipment, like a projector.">
+				<cocoa integer-value="4"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="organization person" code="rPer" description="Organization person">
+			<property name="name" code="pnam" description="Name" type="text" access="r"/>
+			<property name="title" code="titl" description="Title" type="text" access="r"/>
+			<property name="phone" code="Phon" description="Phone" type="text" access="r"/>
+			<property name="office" code="Ofic" description="Office" type="text" access="r"/>
+		</record-type>
+		<record-type name="organization information" code="rOgI" description="Organization information for a contact.">
+			<property name="manager" code="Mana" description="Mananger" access="r">
+				<type type="organization person" list="yes"/>
+			</property>
+			<property name="direct reports" code="Dire" description="Direct reports" access="r">
+				<type type="organization person" list="yes"/>
+			</property>
+			<property name="membership" code="Memo" description="Member of" access="r">
+				<type type="text" list="yes"/>
+			</property>
+		</record-type>
+		<class name="address book" code="cABo" description="An address book. It contains contacts." inherits="folder">
+			<cocoa class="ASContactFolder"/>
+			<element description="The contacts that are filed in an address book." type="contact"/>
+			<element description="The contact groups that are filed in an address book." type="group"/>
+			<property name="directory source" code="cCPS" description="The directory source for this folder. Use it with the Contacts Panel to run searches" type="directory source" access="r">
+				<cocoa key="directorySource"/>
+			</property>
+		</class>
+		<class name="contact" code="cAbE" description="A contact." inherits="todoable object">
+			<cocoa class="ASContact"/>
+			<property name="first name" code="pFrN" description="The first name of a contact." type="text"/>
+			<property name="last name" code="pLsN" description="The last name of a contact." type="text"/>
+			<property name="middle name" code="pMdN" description="The middle name of a contact." type="text"/>
+			<property name="display name" code="dspn" description="The display name of a contact." type="text" access="r"/>
+			<property name="title" code="titl" description="The title for a contact." type="text"/>
+			<property name="nickname" code="nick" description="The nickname of a contact." type="text">
+				<cocoa key="nickName"/>
+			</property>
+			<property name="suffix" code="sufx" description="The name suffix of a contact." type="text">
+				<cocoa key="nameSuffix"/>
+			</property>
+			<property name="phone" code="Phon" description="The default phone number of a contact." type="text">
+				<cocoa key="mainPhone"/>
+			</property>
+			<property name="home phone number" code="hmNm" description="The home phone number of a contact." type="text">
+				<cocoa key="homePhone"/>
+			</property>
+			<property name="other home phone number" code="h2Nm" description="The second home phone number of a contact." type="text">
+				<cocoa key="homePhone2"/>
+			</property>
+			<property name="home fax number" code="hFax" description="The home fax number of a contact." type="text">
+				<cocoa key="homeFax"/>
+			</property>
+			<property name="business phone number" code="bsNm" description="The business phone number of a contact." type="text">
+				<cocoa key="businessPhone"/>
+			</property>
+			<property name="other business phone number" code="b2Nm" description="The second business phone number of a contact." type="text">
+				<cocoa key="businessPhone2"/>
+			</property>
+			<property name="business fax number" code="bFax" description="The business fax number of a contact." type="text">
+				<cocoa key="businessFax"/>
+			</property>
+			<property name="pager number" code="pgNm" description="The pager number of a contact." type="text">
+				<cocoa key="pager"/>
+			</property>
+			<property name="mobile number" code="mbNm" description="The cell phone number of a contact." type="text">
+				<cocoa key="cellPhone"/>
+			</property>
+			<property name="email addresses" code="EmAd" description="The e-mail addresses of a contact.">
+				<type type="contact email address" list="yes"/>
+			</property>
+			<property name="IM addresses" code="IMAd" description="The instant messaging addresses of a contact.">
+				<cocoa key="IMAddresses"/>
+				<type type="contact IM address" list="yes"/>
+			</property>
+			<property name="office" code="Ofic" description="The office of a contact." type="text">
+				<cocoa key="businessOffice"/>
+			</property>
+			<property name="company" code="Cmpy" description="The name of the company of a contact." type="text">
+				<cocoa key="businessCompany"/>
+			</property>
+			<property name="job title" code="pTtl" description="The job title of a contact." type="text">
+				<cocoa key="businessTitle"/>
+			</property>
+			<property name="department" code="Dptm" description="The department of a contact." type="text">
+				<cocoa key="businessDepartment"/>
+			</property>
+			<property name="assistant phone number" code="asNm" description="The phone number of the assistant of a contact." type="text">
+				<cocoa key="assistantPhone"/>
+			</property>
+			<property name="age" code="Age " description="The age of a contact." type="integer"/>
+			<property name="anniversary" code="CsD4" description="The anniversary of a contact." type="date"/>
+			<property name="astrology sign" code="astS" description="The astrological sign of a contact." type="text"/>
+			<property name="birthday" code="CsD3" description="The birthday of a contact." type="date"/>
+			<property name="blood type" code="BldT" description="The blood group of a contact." type="text"/>
+			<property name="description" code="dScr" description="The notes of a contact." type="text">
+				<cocoa key="notes"/>
+			</property>
+			<property name="home street address" code="hStA" description="The home street address of a contact." type="text"/>
+			<property name="home city" code="hCty" description="The home city of a contact" type="text"/>
+			<property name="home state" code="hSta" description="The home state of a contact." type="text"/>
+			<property name="home country" code="hCou" description="The home country of a contact." type="text"/>
+			<property name="home zip" code="hZip" description="The home zip code of a contact." type="text"/>
+			<property name="business street address" code="bStA" description="The business street address of a contact." type="text"/>
+			<property name="business city" code="bCty" description="The business city of a contact" type="text"/>
+			<property name="business state" code="bSta" description="The business state of a contact." type="text"/>
+			<property name="business country" code="bCou" description="The business country of a contact." type="text"/>
+			<property name="business zip" code="bZip" description="The business zip code of a contact." type="text"/>
+			<property name="home web page" code="hmWP" description="The home web page of a contact." type="text"/>
+			<property name="business web page" code="bsWP" description="The business web page of a contact." type="text"/>
+			<property name="spouse" code="Spse" description="The name of the spouse of a contact." type="text">
+				<cocoa key="spousesName"/>
+			</property>
+			<property name="children" code="Chld" description="The list of children of a contact.">
+				<cocoa key="childrensNames"/>
+				<type type="text" list="yes"/>
+			</property>
+			<property name="interests" code="Intr" description="The interests of a contact." type="text"/>
+			<property name="image" code="imgr" description="The image of a contact.">
+				<cocoa key="contactImage"/>
+				<type type="missing value"/>
+				<type type="image"/>
+			</property>
+			<property name="is Japanese contact" code="jpnF" description="Indicates whether a contact is in Japanese format?" type="boolean">
+				<cocoa key="isJapaneseContact"/>
+			</property>
+			<property name="first name furigana" code="fFri" description="The furigana for a contact&apos;s first name (Japanese format contact only)." type="text">
+				<cocoa key="furiganaFirstName"/>
+			</property>
+			<property name="last name furigana" code="lFri" description="The furigana for a contact&apos;s last name (Japanese format contact only)." type="text">
+				<cocoa key="furiganaLastName"/>
+			</property>
+			<property name="middle name furigana" code="mFri" description="The furigana for a contact&apos;s middle name (Japanese format contact only)." type="text">
+				<cocoa key="furiganaMiddleName"/>
+			</property>
+			<property name="children furigana" code="kFri" description="The furigana name of the children of a contact (Japanese format contact only).">
+				<cocoa key="furiganaChildrensNames"/>
+				<type type="text" list="yes"/>
+			</property>
+			<property name="spouse furigana" code="sFri" description="The furigana name of the spouse of a contact (Japanese format contact only)." type="text">
+				<cocoa key="furiganaSpousesName"/>
+			</property>
+			<property name="company furigana" code="cFri" description="The furigana for the company of a contact (Japanese format contact only)." type="text">
+				<cocoa key="furiganaCompanyName"/>
+			</property>
+			<property name="custom field one" code="Cst1" description="The first custom field of a contact." type="text">
+				<cocoa key="custom1"/>
+			</property>
+			<property name="custom field two" code="Cst2" description="The first custom field of a contact." type="text">
+				<cocoa key="custom2"/>
+			</property>
+			<property name="custom field three" code="Cst3" description="The third custom field of a contact." type="text">
+				<cocoa key="custom3"/>
+			</property>
+			<property name="custom field four" code="Cst4" description="The fourth custom field of a contact." type="text">
+				<cocoa key="custom4"/>
+			</property>
+			<property name="custom field five" code="Cst5" description="The fifth custom field of a contact." type="text">
+				<cocoa key="custom5"/>
+			</property>
+			<property name="custom field six" code="Cst6" description="The sixth custom field of a contact." type="text">
+				<cocoa key="custom6"/>
+			</property>
+			<property name="custom field seven" code="Cst7" description="The seventh custom field of a contact." type="text">
+				<cocoa key="custom7"/>
+			</property>
+			<property name="custom field eight" code="Cst8" description="The eigth custom field of a contact." type="text">
+				<cocoa key="custom8"/>
+			</property>
+			<property name="custom phone 1" code="kPh1" description="The first custom phone field of a contact." type="text">
+				<cocoa key="customPhone1"/>
+			</property>
+			<property name="custom phone 2" code="kPh2" description="The second custom phone field of a contact." type="text">
+				<cocoa key="customPhone2"/>
+			</property>
+			<property name="custom phone 3" code="kPh3" description="The third custom phone field of a contact." type="text">
+				<cocoa key="customPhone3"/>
+			</property>
+			<property name="custom phone 4" code="kPh4" description="The fourth custom phone field of a contact." type="text">
+				<cocoa key="customPhone4"/>
+			</property>
+			<property name="custom date field one" code="CsD1" description="The first custom date field of a contact." type="date">
+				<cocoa key="customDate1"/>
+			</property>
+			<property name="custom date field two" code="CsD2" description="The second custom date field of a contact." type="date">
+				<cocoa key="customDate2"/>
+			</property>
+			<property name="address book" code="cABo" description="The address book containing a contact." type="address book" access="r"/>
+			<property name="exchange id" code="ExID" description="The exchange identifier of a contact (only applicable for contacts belonging to exchange accounts)." type="text" access="r">
+				<cocoa key="exchangeOrEasID"/>
+			</property>
+			<property name="modification date" code="asmo" description="The date on which a contact was last modified." type="date" access="r">
+				<cocoa key="modDate"/>
+			</property>
+			<property name="note" code="cNot" description="The HTML notes for a contact." type="text">
+				<cocoa key="notes"/>
+			</property>
+			<property name="plain text note" code="PlTN" description="The notes for a contact as plain text." type="text">
+				<cocoa key="plainTextNotes"/>
+			</property>
+			<property name="display type" code="eCDT" description="The type of contact" type="contact display type">
+				<cocoa key="displayType"/>
+			</property>
+			<property name="vcard data" code="vCrd" description="The information of a contact in vCard format. Use the &apos;import vcf&apos; command to create a contact from vCard information." type="text" access="r">
+				<cocoa key="vCardRepresentation"/>
+			</property>
+			<responds-to command="open">
+				<cocoa method="handleOpenCommand:"/>
+			</responds-to>
+			<responds-to command="print">
+				<cocoa method="handlePrintCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+		<class name="group" code="cAdG" description="A contact group." inherits="todoable object">
+			<cocoa class="ASGroup"/>
+			<property name="name" code="pnam" description="The name of a group." type="text"/>
+			<property name="members" code="GrMe" description="The member of a group.">
+				<type type="email address" list="yes"/>
+			</property>
+			<property name="address book" code="cABo" description="The address book containing a group." type="address book" access="r"/>
+			<property name="note" code="cNot" description="The notes for a group." type="text">
+				<cocoa key="notes"/>
+			</property>
+			<property name="plain text note" code="PlTN" description="The notes for a group as plain text." type="text">
+				<cocoa key="plainTextNotes"/>
+			</property>
+			<property name="suppress member names" code="sprN" description="Indicates whether the members names are suppressed when messages are to a group." type="boolean">
+				<cocoa key="suppressNames"/>
+			</property>
+			<property name="exchange id" code="ExID" description="The exchange identifier of a group (only applicable for groups belonging to exchange accounts)." type="text" access="r">
+				<cocoa key="exchangeOrEasID"/>
+			</property>
+			<property name="modification date" code="asmo" description="The date on which a group was last modified." type="date" access="r">
+				<cocoa key="modDate"/>
+			</property>
+			<responds-to command="open">
+				<cocoa method="handleOpenCommand:"/>
+			</responds-to>
+			<responds-to command="expand">
+				<cocoa method=""/>
+			</responds-to>
+		</class>
+		<command name="search" code="OECoSrch" description="Search for contacts using an account.">
+			<direct-parameter description="The account to search on.">
+				<type type="ldap account"/>
+				<type type="exchange account"/>
+			</direct-parameter>
+			<parameter name="for name" code="ScNa" description="The name of the contact to search." type="text">
+				<cocoa key="searchName"/>
+			</parameter>
+			<result description="The search results.">
+				<type type="email address" list="yes"/>
+			</result>
+		</command>
+		<command name="open contact" code="OECoOpCt" description="Open a contact in Outlook.">
+			<cocoa class="ASOpenContactCommand"/>
+			<parameter name="email address" code="emad" description="The email address of the contact to be opened." type="text">
+				<cocoa key="emailAddress"/>
+			</parameter>
+			<result description="True if the contact was found and opened, false otherwise." type="boolean"/>
+		</command>
+		<command name="expand" code="OECoxpdl" description="Queries DL expansion information for a distribution list.">
+			<cocoa class="ASExpandDLCommand"/>
+			<direct-parameter description="An email address of a distribution list or a group on which DL expansion will be acted upon.">
+				<type type="group"/>
+				<type type="email address"/>
+			</direct-parameter>
+			<parameter name="exchange account" code="Eact" description="The exchange account with which to perform public DL expansion query." type="exchange account" optional="yes">
+				<cocoa key="exchAcc"/>
+			</parameter>
+			<result description="Returns DL expansion data as a list of email addresses that are contained in the DL that was queried on">
+				<type type="email address" list="yes"/>
+			</result>
+		</command>
+		<command name="image search" code="LDAPImgR" description="Retrieve a contact image">
+			<direct-parameter description="The account to search on" type="exchange account"/>
+			<parameter name="for email address" code="DfEm" description="The default email address of the contact" type="email address">
+				<cocoa key="emailAddress"/>
+			</parameter>
+			<result description="NSData of the image">
+				<type type="missing value"/>
+				<type type="image"/>
+			</result>
+		</command>
+		<command name="load image" code="loadImag" description="Load an image using OLImageLoader">
+			<cocoa class="ASLoadImageCommand"/>
+			<parameter name="force update" code="forc" description="Force update from a server" type="boolean" optional="yes">
+				<cocoa key="force"/>
+			</parameter>
+			<parameter name="email address" code="emai" description="The email address and display name of the person to find" type="email address">
+				<cocoa key="emailAddress"/>
+			</parameter>
+			<parameter name="contact" code="cont" description="The contact to search for" type="contact" optional="yes">
+				<cocoa key="contact"/>
+			</parameter>
+			<result description="NSData of the image to use for this contact">
+				<type type="missing value"/>
+				<type type="image"/>
+			</result>
+		</command>
+		<command name="import vcf" code="MSOEimvc" description="Import a vcf file.">
+			<cocoa class="ASImportVCFCommand"/>
+			<direct-parameter description="The vcf file to import." type="file"/>
+			<parameter name="to" code="insh" description="The address book where the vcf file will be imported." type="location specifier" optional="yes">
+				<cocoa key="Location"/>
+			</parameter>
+			<result description="The contacts created by the import.">
+				<type type="contact" list="yes"/>
+			</result>
+		</command>
+		<command name="query organization information" code="OEAcQuOI" description="Retreive the organization information for a contact.">
+			<direct-parameter description="The account to search on" type="exchange account"/>
+			<parameter name="for" code="fcon" description="The contact" type="contact">
+				<cocoa key="contact"/>
+			</parameter>
+			<result description="Organization information">
+				<type type="organization information"/>
+				<type type="missing value"/>
+			</result>
+		</command>
+		<command name="resolve names" code="OECoExRN" description="Search for contacts using EWS resolveNames.">
+			<direct-parameter description="The account to search on." type="exchange account"/>
+			<parameter name="for name" code="ScNa" description="The name of the contact to search." type="text">
+				<cocoa key="searchName"/>
+			</parameter>
+			<result description="The search results.">
+				<type type="email address" list="yes"/>
+			</result>
+		</command>
+	</suite>
+	<suite name="Calendar Suite" code="OECa" description="Classes and commands for Outlook calendar features.">
+		<enumeration name="free busy status" code="eFBt" description="The free busy status for an event.">
+			<enumerator name="busy" code="eSBu" description="Busy.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="free" code="eSFr" description="Free.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="tentative" code="eSTe" description="Tentative.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="out of office" code="eSOO" description="Out of office.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="end data type" code="eEDT" description="Types for the end dates of recurrences. End dates can either be numbered, dated, or non-existant. ">
+			<enumerator name="no end type" code="eNEt" description="Recurrence never ends">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="end date type" code="eEDt" description="Recurrence ends after a specific date">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="end numbered type" code="eENt" description="Recurrence ends after a number of occurrences">
+				<cocoa integer-value="1"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="recurrence pattern type" code="eRPT" description="Recurrence types">
+			<enumerator name="daily" code="eRdp" description="A daily recurrence pattern">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="weekly" code="eRwp" description="A weekly recurrence pattern">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="relative monthly" code="eRrm" description="A relative monthly recurrence pattern">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="absolute monthly" code="eRam" description="An absolute monthly recurrence pattern">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="relative yearly" code="eRry" description="A relative yearly recurrence pattern">
+				<cocoa integer-value="4"/>
+			</enumerator>
+			<enumerator name="absolute yearly" code="eRay" description="An absolute yearly recurrence pattern">
+				<cocoa integer-value="5"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="end data" code="rEnD" description="End Data of a recurrence can be expressed in 3 ways. When there is no end to the recurrence, the end type is set to &quot;no end type&quot; and the data field is not set at all. When the end of the recurrence is defined by the number of occurrences, the end type is set to &quot;end numbered type&quot; and data is set to the number of occurrences. When the end of the recurrence is defined by a specific date, the end type is set to &quot;end date type&quot; and data is set to the specified date.">
+			<property name="end type" code="pEnT" description="The type of ending for a recurrence (no end type, end numbered type, end date type)." type="end data type"/>
+			<property name="data" code="peDa" description="If end type is end numbered type then data is expected to be a number. If end type is end date type then data is expected to be a date. Otherwise it is not used.">
+				<type type="date"/>
+				<type type="integer"/>
+			</property>
+		</record-type>
+		<record-type name="day of week" code="rDOW" description="A record containing a boolean for each day of the week. Used for defining a week based recurrence.">
+			<property name="sunday" code="rDSu" description="Flag for Sunday" type="boolean"/>
+			<property name="monday" code="rDMo" description="Flag for Monday" type="boolean"/>
+			<property name="tuesday" code="rDTu" description="Flag for Tuesday" type="boolean"/>
+			<property name="wednesday" code="rDWe" description="Flag for Wednesday" type="boolean"/>
+			<property name="thursday" code="rDTh" description="Flag for Thursday" type="boolean"/>
+			<property name="friday" code="rDFr" description="Flag for Friday" type="boolean"/>
+			<property name="saturday" code="rDSa" description="Flag for Saturday" type="boolean"/>
+			<property name="all days" code="rDDa" description="A flag that signifies all days. This flag takes precedence over weekdays and weekends." type="boolean"/>
+			<property name="weekdays" code="rDWD" description="A flag that signifies weekdays (M-F). " type="boolean"/>
+			<property name="weekends" code="rDWE" description="A flag that signifies weekends (Sat, Sun)." type="boolean"/>
+		</record-type>
+		<record-type name="recurrence" code="rREc" description="A Recurrence Object.The pattern of the recurrence is defined by the property recurrence type. For all recurrence type properties, Start date, End date, Recurrence Type, occurrence interval must always be defined.  For the weekly recurrence type, days of week must be defined. For relative monthly recurrence, days of week and ordinal must be defined. For absolute monthly recurrence, day of month must be defined. For relative yearly recurrence, days of week, ordinal, and month number must be defined.">
+			<property name="start date" code="tStr" description="The start date of a recurrence. This property must be defined for all recurrences." type="date"/>
+			<property name="end date" code="ReED" description="The end data of a recurrence. Do not use a date here - you must use an end data record type. This property must be defined for all recurrences." type="end data"/>
+			<property name="recurrence type" code="ReTy" description="The type of recurrence (daily, weekly, relative monthly, absolute monthly, relative yearly, absolute yearly)." type="recurrence pattern type"/>
+			<property name="occurrence interval" code="ReOi" description="The occurrence interval of a recurrence. This property must be defined for all recurrences." type="integer"/>
+			<property name="month number" code="ReMN" description="The month number. This property must be defined for both relative and absolute yearly recurrences." type="integer"/>
+			<property name="day of month" code="ReDM" description="The day of the month. This property must be defined for absolute yearly and absolute monthly recurrences." type="integer"/>
+			<property name="ordinal" code="ReOr" description="This property is used in conjunction with days of week type. It defines the instance of a weekday within a month to apply the recurrence. Valid values range from 1-5 where 1 means &quot;First&quot;, 2 means &quot;Second&quot;, etc..." type="integer"/>
+			<property name="days of week" code="ReDw" description="A series of booleans that mark what days of the week the recurrence applies to." type="day of week"/>
+		</record-type>
+		<enumeration name="attendee type" code="eATy" description="Type of an attendee (required, optional, resource)">
+			<enumerator name="required attendee type" code="ATrq" description="Required attendee.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="optional attendee type" code="ATop" description="Optional attendee.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="resource attendee type" code="ATrs" description="Resource attendee.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="acceptance status" code="eACs" description="Attendee acceptance status.">
+			<enumerator name="accepted" code="ASac" description="Attendee accepted.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="tentatively accepted" code="ASte" description="Attendee tentatively accepted.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="declined" code="ASde" description="Attendee declined.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="not responded" code="ASnr" description="Attendee hasn&apos;t responded.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+		</enumeration>
+		<record-type name="timezone" code="rTmZ">
+			<property name="name" code="pnam" type="text"/>
+			<property name="offset" code="pOff" type="integer" access="r"/>
+		</record-type>
+		<enumeration name="attendee address type" code="adAt" description="Address type of an attendee (unresolved address, contact address, public group address, private group address)">
+			<enumerator name="unresolved attendee" code="unAd" description="Unresolved address type">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="contact attendee" code="cnAd" description="Contact address type">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="public group attendee" code="pgAd" description="Public group address type">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="private group attendee" code="paAd" description="Private group address type">
+				<cocoa integer-value="3"/>
+			</enumerator>
+		</enumeration>
+		<class name="calendar" code="cCFo" description="A calendar folder. It contains events." inherits="folder">
+			<cocoa class="ASCalendarFolder"/>
+			<element description="The calendar events that are filed in a calendar." type="calendar event"/>
+		</class>
+		<class name="calendar event" code="cEvt" description="A calendar event." inherits="categorizable object">
+			<cocoa class="ASCalendarEvent"/>
+			<element description="All meeting attendees." type="attendee" access="r"/>
+			<element description="Required attendees of a meeting." type="required attendee"/>
+			<element description="Optional attendees of a meeting." type="optional attendee"/>
+			<element description="Resource attendees of a meeting." type="resource attendee"/>
+			<element description="The attachments for a calendar event." type="attachment"/>
+			<property name="subject" code="subj" description="The subject of an event." type="text">
+				<cocoa key="summary"/>
+			</property>
+			<property name="start time" code="offs" description="The time at which an event begins." type="date"/>
+			<property name="end time" code="endT" description="The time at which an event ends." type="date"/>
+			<property name="location" code="iloc" description="The location of an event." type="text"/>
+			<property name="content" code="ctnt" description="The HTML description of the event." type="text"/>
+			<property name="plain text content" code="PlTC" description="The description of the event as plain text." type="text"/>
+			<property name="has html" code="pHtm" description="Indicates whether the description of the event has html text?" type="boolean" access="r">
+				<cocoa key="hasHTML"/>
+			</property>
+			<property name="all day flag" code="EvAD" description="A flag for whether or not an event is an all day event." type="boolean">
+				<cocoa key="isAllDayEvent"/>
+			</property>
+			<property name="has reminder" code="pHsR" description="Indicates whether or not an event has a reminder." type="boolean"/>
+			<property name="reminder time" code="pRnt" description="The number of minutes from the start time of an event when a reminder will fire (if it has one)." type="integer"/>
+			<property name="free busy status" code="pFre" description="The free/busy status for an event." type="free busy status"/>
+			<property name="exchange id" code="ExID" description="The exchange identifier of an event (only applicable for events belonging to exchange accounts)." type="text" access="r">
+				<cocoa key="exchangeOrEasID"/>
+			</property>
+			<property name="modification date" code="asmo" description="The date an event was last modified on." type="date" access="r">
+				<cocoa key="modDate"/>
+			</property>
+			<property name="recurrence" code="rREc" description="The calendar recurrence.">
+				<type type="recurrence"/>
+				<type type="missing value"/>
+			</property>
+			<property name="is recurring" code="pRcr" description="Indicates whehter an event is part of a recurring series of events." type="boolean" access="r"/>
+			<property name="is occurrence" code="pExc" description="Indicates whether an event is an occurrence of a recurring series." type="boolean" access="r"/>
+			<property name="recurrence id" code="pRid" description="The recurrence id of an event (the date at which the recurring event occurs)." type="date" access="r"/>
+			<property name="master" code="pMid" description="The master event for an event that is an exception from a recurring series." type="calendar event" access="r"/>
+			<property name="is private" code="pCip" description="Indicates whether an event is private." type="boolean"/>
+			<property name="calendar" code="cCFo" description="The calendar folder in which an event is filed." type="calendar" access="r">
+				<cocoa key="folder"/>
+			</property>
+			<property name="account" code="cAct" description="The account associated with an event." type="account" access="r"/>
+			<property name="organizer" code="orGA" description="The organizer of the meeting." type="text" access="r"/>
+			<property name="timezone" code="rTmZ" description="The timezone of an event." type="timezone"/>
+			<property name="request responses" code="pRqR" description="Indicates whether a response is requested from the attendees of the meeting." type="boolean">
+				<cocoa key="responsesRequested"/>
+			</property>
+			<property name="icalendar data" code="iCal" description="The information of an event in iCalendar format. Use the &apos;import ics&apos; command to create an event from iCalendar information." type="text" access="r">
+				<cocoa key="iCalendarRepresentation"/>
+			</property>
+			<responds-to command="open">
+				<cocoa method="handleOpenCommand:"/>
+			</responds-to>
+			<responds-to command="get occurrence of">
+				<cocoa method="handleGetOccurrenceOfCommand:"/>
+			</responds-to>
+			<responds-to command="get locked occurrence of">
+				<cocoa method="handleGetLockedOccurrenceOfCommand:"/>
+			</responds-to>
+			<responds-to command="send meeting">
+				<cocoa method="handleSendMeetingCommand:"/>
+			</responds-to>
+			<responds-to command="cancel meeting">
+				<cocoa method="handleCancelMeetingCommand:"/>
+			</responds-to>
+			<responds-to command="accept meeting">
+				<cocoa method="handleAcceptMeetingCommand:"/>
+			</responds-to>
+			<responds-to command="accept tentatively meeting">
+				<cocoa method="handleTentativelyAcceptMeetingCommand:"/>
+			</responds-to>
+			<responds-to command="decline meeting">
+				<cocoa method="handleDeclineMeetingCommand:"/>
+			</responds-to>
+			<responds-to command="reply to">
+				<cocoa method="handleReplyToCommand:"/>
+			</responds-to>
+			<responds-to command="forward">
+				<cocoa method="handleForwardCommand:"/>
+			</responds-to>
+			<responds-to command="print">
+				<cocoa method="handlePrintCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+		<class name="attendee" code="Ttee" description="A meeting attendee." inherits="item">
+			<cocoa class="ASAttendee"/>
+			<property name="email address" code="emad" description="The e-mail address of an attendee." type="email address"/>
+			<property name="type" code="type" description="The type of a recipient (required, optional, resource)" type="attendee type" access="r"/>
+			<property name="status" code="Stts" description="Attendee acceptance status." type="acceptance status" access="r"/>
+			<property name="address type" code="adty" description="The address type of a recipient (unresolved address, contact address, public group address, private group address)" type="attendee address type" access="r"/>
+		</class>
+		<class name="required attendee" code="Tteq" description="A required meeting attendee." inherits="attendee">
+			<cocoa class="ASAttendee"/>
+		</class>
+		<class name="optional attendee" code="Tteo" description="An optional meeting attendee." inherits="attendee">
+			<cocoa class="ASAttendee"/>
+		</class>
+		<class name="resource attendee" code="Tter" description="A resource meeting attendee." inherits="attendee">
+			<cocoa class="ASAttendee"/>
+		</class>
+		<command name="go to" code="OECaGoTo" description="Switches the current calendar view to the date specified.">
+			<cocoa class="ASGoToDateCommand"/>
+			<direct-parameter description="The date the calendar view should be switched to." type="date"/>
+		</command>
+		<command name="get occurrence of" code="OECaCgoo" description="Gets an occurrence of a calendar event specified by date.">
+			<direct-parameter description="The calendar event series." type="calendar event"/>
+			<parameter name="at" code="insh" description="The date for the occurrence that is being retrieved. " type="date">
+				<cocoa key="at"/>
+			</parameter>
+			<result description="If the occurrence can be found we return the calendar event as a modified exception with no properties changed. If the occurrence cannot be found we return a missing value.">
+				<type type="calendar event"/>
+				<type type="missing value"/>
+			</result>
+		</command>
+		<command name="get locked occurrence of" code="OECaCglo" description="Gets an occurrence of a calendar event specified by date with the syncing blocked until meeting is sent.">
+			<direct-parameter description="The calendar event series." type="calendar event"/>
+			<parameter name="at" code="insh" description="The date for the occurrence that is being retrieved. " type="date">
+				<cocoa key="at"/>
+			</parameter>
+			<result description="If the occurrence can be found we return the calendar event as a modified exception with no properties changed. Both the series event and the modified exception are blocked from syncing until the meeting invite is sent. If the occurrence cannot be found we return a missing value.">
+				<type type="calendar event"/>
+				<type type="missing value"/>
+			</result>
+		</command>
+		<command name="send meeting" code="OECaCsmg" description="Send meeting invites/updates.">
+			<direct-parameter description="The meeting to send." type="calendar event"/>
+			<parameter name="from account" code="FrAc" description="The account to use to send the meeting which are in the local calendar." type="account" optional="yes">
+				<cocoa key="fromAccount"/>
+			</parameter>
+		</command>
+		<command name="cancel meeting" code="OECaCcmg" description="Cancel meeting and send out cancellations.">
+			<direct-parameter description="The meeting to cancel." type="calendar event"/>
+		</command>
+		<command name="accept meeting" code="OECaCamg" description="Accept meeting and send meeting response when needed.">
+			<direct-parameter description="The meeting to accept." type="calendar event"/>
+			<parameter name="comment" code="aaWC" description="When sending responses, the text of the response body (in HTML)" type="text" optional="yes">
+				<cocoa key="withComment"/>
+			</parameter>
+			<parameter name="sending response" code="aaSR" description="Should the acceptance response message be sent back to the organizer." type="boolean" optional="yes">
+				<cocoa key="sendingResponse"/>
+			</parameter>
+		</command>
+		<command name="accept tentatively meeting" code="OECaCtmg" description="Accept tentatively meeting and send meeting response when needed.">
+			<direct-parameter description="The meeting to accept tentatively." type="calendar event"/>
+			<parameter name="comment" code="aaWC" description="When sending responses, the text of the response body (in HTML)" type="text" optional="yes">
+				<cocoa key="withComment"/>
+			</parameter>
+			<parameter name="sending response" code="aaSR" description="Should the acceptance response message be sent back to the organizer." type="boolean" optional="yes">
+				<cocoa key="sendingResponse"/>
+			</parameter>
+		</command>
+		<command name="decline meeting" code="OECaCdmg" description="Decline meeting and send meeting response when needed.">
+			<direct-parameter description="The meeting to decline." type="calendar event"/>
+			<parameter name="comment" code="aaWC" description="When sending responses, the text of the response body (in HTML)" type="text" optional="yes">
+				<cocoa key="withComment"/>
+			</parameter>
+			<parameter name="sending response" code="aaSR" description="Should the decline response message be sent back to the organizer." type="boolean" optional="yes">
+				<cocoa key="sendingResponse"/>
+			</parameter>
+		</command>
+		<command name="query freebusy" code="OECaFbqy" description="Queries free/busy information from an exchange server for a set of attendees.">
+			<direct-parameter description="The exchange account with which to perform free/busy query with." type="exchange account"/>
+			<parameter name="for attendees" code="FbAt" description="A list of attendees whose free/busy information will be queried.">
+				<cocoa key="attendees"/>
+				<type type="text" list="yes"/>
+			</parameter>
+			<parameter name="range start time" code="FbSt" description="Date specifying the start range of the free/busy query." type="date">
+				<cocoa key="startDate"/>
+			</parameter>
+			<parameter name="range end time" code="FbEn" description="Date specifying the end range of the free/busy query." type="date">
+				<cocoa key="endDate"/>
+			</parameter>
+			<parameter name="interval" code="FbIn" description="Interval in minutes that is used to specify the duration each free/busy info block represents in the resulting array that is returned by the free/busy query." type="integer">
+				<cocoa key="interval"/>
+			</parameter>
+			<result description="Returns free/busy data as a list of strings per attendee: email address, start date, end date, subject, location, and status. This sequence repeats for each attendee. The free/busy details (subject, location, status) repeat for each specified interval and requires explicit permissions from associated attendee. If permissions are not sufficient, empty strings will be returned.">
+				<type type="text" list="yes"/>
+			</result>
+		</command>
+		<command name="reply to" code="OEMamRpl" description="Create a reply message to a meeting.">
+			<direct-parameter description="The meeting to reply to." type="calendar event"/>
+			<parameter name="opening window" code="ropw" description="Should the reply message be opened in a window? Default is to show the window." type="boolean" optional="yes">
+				<cocoa key="openingWindow"/>
+			</parameter>
+			<parameter name="reply to all" code="rpal" description="Whether to reply to all recipients of the message. Default it to reply to the organizer only." type="boolean" optional="yes">
+				<cocoa key="replyToAll"/>
+			</parameter>
+			<result description="The meeting reply message." type="message"/>
+		</command>
+		<command name="forward" code="OEMamFwd" description="Creates a forwarded meeting message.">
+			<direct-parameter description="The meeting to forward." type="calendar event"/>
+			<parameter name="to" code="insh" description="The recipients of the forwarded message (comma or colon separated text)." type="text" optional="yes">
+				<cocoa key="recipients"/>
+			</parameter>
+			<parameter name="opening window" code="ropw" description="Should the forwarded message be opened in a window? Default is to show the window." type="boolean" optional="yes">
+				<cocoa key="openingWindow"/>
+			</parameter>
+			<result description="The meeting forward message." type="message"/>
+		</command>
+		<command hidden="yes" name="create new meeting" code="OECaNMtg" description="Create a new meeting.">
+			<cocoa class="ASCreateNewMeeting"/>
+			<direct-parameter description="The email address of the person to invite." type="text"/>
+		</command>
+		<command name="import ics" code="MSOEimic" description="Import an ics file.">
+			<cocoa class="ASImportICSCommand"/>
+			<direct-parameter description="The ics file to import." type="file"/>
+			<parameter name="to" code="insh" description="The calendar where the ics file will be imported." type="location specifier" optional="yes">
+				<cocoa key="Location"/>
+			</parameter>
+			<result description="The records (calendar events, tasks, notes) created by the import.">
+				<type type="object" list="yes"/>
+			</result>
+		</command>
+		<command name="reminders visible" code="OECaReOn" description="Whether reminders window is currently visible.">
+			<cocoa class="ASRemindersVisible"/>
+			<result description="True if reminders window is currently visible;false otherwise." type="boolean"/>
+		</command>
+	</suite>
+	<suite name="Task Suite" code="OETa" description="Classes and commands for Outlook task features.">
+		<class name="task folder" code="cTFo" description="A task folder. It contains tasks." inherits="folder">
+			<cocoa class="ASTaskFolder"/>
+			<element description="The tasks that are filed in a task folder." type="task"/>
+		</class>
+		<class name="task" code="cTsk" description="A task." inherits="todoable object">
+			<cocoa class="ASTask"/>
+			<property name="name" code="pnam" description="The name of a task." type="text"/>
+			<property name="content" code="ctnt" description="The HTML notes of a task." type="text">
+				<cocoa key="note"/>
+			</property>
+			<property name="plain text content" code="PlTC" description="The notes of a task as plain text." type="text"/>
+			<property name="priority" code="prty" description="The priority of a task." type="priority"/>
+			<property name="folder" code="cFld" description="The folder in which a task is filed." type="task folder" access="r"/>
+			<property name="exchange id" code="ExID" description="The exchange identifier of a task (only applicable for tasks belonging to exchange accounts)." type="text" access="r">
+				<cocoa key="exchangeOrEasID"/>
+			</property>
+			<property name="modification date" code="asmo" description="The date a task was last modified on." type="date" access="r">
+				<cocoa key="modDate"/>
+			</property>
+			<property name="icalendar data" code="iCal" description="The information of a task in iCalendar format. Use the &apos;import ics&apos; command to create a task from iCalendar information." type="text" access="r">
+				<cocoa key="iCalendarRepresentation"/>
+			</property>
+			<responds-to command="open">
+				<cocoa method="handleOpenCommand:"/>
+			</responds-to>
+			<responds-to command="print">
+				<cocoa method="handlePrintCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+	</suite>
+	<suite name="Note Suite" code="OENo" description="Classes and commands for Outlook note features.">
+		<class name="note folder" code="cNFo" description="A note folder. It contains notes." inherits="folder">
+			<cocoa class="ASNoteFolder"/>
+			<element description="The notes that are filed in a note folder." type="note"/>
+		</class>
+		<class name="note" code="cNot" description="A note." inherits="categorizable object">
+			<cocoa class="ASNote"/>
+			<property name="name" code="pnam" description="The name of a note." type="text">
+				<cocoa key="title"/>
+			</property>
+			<property name="content" code="ctnt" description="The HTML content of a note." type="text">
+				<cocoa key="text"/>
+			</property>
+			<property name="plain text content" code="PlTC" description="The content of a note as plain text." type="text"/>
+			<property name="folder" code="cFld" description="The folder in which a note is filed." type="note folder" access="r"/>
+			<property name="creation date" code="ascd" description="The date a note was created on." type="date" access="r"/>
+			<property name="exchange id" code="ExID" description="The exchange identifier of a note (only applicable for notes belonging to exchange accounts)." type="text" access="r">
+				<cocoa key="exchangeOrEasID"/>
+			</property>
+			<property name="modification date" code="asmo" description="The date a note was last modified on." type="date" access="r">
+				<cocoa key="modDate"/>
+			</property>
+			<property name="icalendar data" code="iCal" description="The information of a note in iCalendar format. Use the &apos;import ics&apos; command to create a note from iCalendar information." type="text" access="r">
+				<cocoa key="iCalendarRepresentation"/>
+			</property>
+			<responds-to command="open">
+				<cocoa method="handleOpenCommand:"/>
+			</responds-to>
+			<responds-to command="print">
+				<cocoa method="handlePrintCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveCommand:"/>
+			</responds-to>
+		</class>
+	</suite>
+	<suite name="Signature Suite" code="OESg" description="Classes and commands for Outlook signature features.">
+		<class name="signature" code="cSig" description="A signature." inherits="object">
+			<cocoa class="ASSignature"/>
+			<property name="name" code="pnam" description="The name of a signature." type="text">
+				<cocoa key="signatureName"/>
+			</property>
+			<property name="content" code="ctnt" description="The HTML content of a signature." type="text">
+				<cocoa key="signatureText"/>
+			</property>
+			<property name="plain text content" code="PlTC" description="The content of a signature as plain text." type="text"/>
+			<property name="include in random" code="NcRd" description="This field is no longer in use." type="boolean">
+				<cocoa key="includedInRandom"/>
+			</property>
+		</class>
+	</suite>
+	<suite name="URL Suite" code="GURL" description="Standard suite for uniform resource locators (URLs).">
+		<command name="handle URL" code="GURLGURL" description="Handle a mailto URL.">
+			<cocoa class="ASHandleURLCommand"/>
+			<direct-parameter description="The mailto URL (as per RFC 2368, http://tools.ietf.org/html/rfc2368)." type="text"/>
+		</command>
+	</suite>
+	<suite hidden="yes" name="Debug Suite" code="OEDb" description="Classes and commands for Outlook debugging.">
+		<enumeration name="image source" code="imgs" description="Describes an image&apos;s source (database, cache, cached from a specific location online..)">
+			<enumerator name="any cached image" code="ACcI" description="Gets any image from the cache, regardless of original source">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="cached LDAP" code="CLdp" description="Gets an image cached from LDAP">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="cached other" code="CcOt" description="Any other image source">
+				<cocoa integer-value="5"/>
+			</enumerator>
+			<enumerator name="any image" code="AnyI" description="Gets an image from any source (this starts with database, then cache)">
+				<cocoa integer-value="6"/>
+			</enumerator>
+			<enumerator name="database" code="DatB" description="Gets the image from the database">
+				<cocoa integer-value="7"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="debug test status" code="eDTS" description="Status of the debug test.">
+			<enumerator name="not started" code="eSNS" description="The test has not started.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="starting" code="eSSt" description="The test is starting.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="in progress" code="eSIP" description="The test is in progress.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="completed" code="eSCo" description="The test completed successfully.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="failed" code="eSFa" description="The test failed.">
+				<cocoa integer-value="4"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="unit test status" code="eUTS" description="Status of the unit test.">
+			<enumerator name="not started" code="eUNS" description="The test has not started.">
+				<cocoa integer-value="0"/>
+			</enumerator>
+			<enumerator name="in progress" code="eUIP" description="The test is in progress.">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="completed" code="eUCo" description="The test completed successfully.">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="failed" code="eUFa" description="The test failed.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+		</enumeration>
+		<class-extension description="Application&apos;s extension for debugging purposes." extends="application">
+			<element hidden="yes" description="Debug tests in Outlook (debug only)." type="debug test"/>
+			<element hidden="yes" type="unit test"/>
+		</class-extension>
+		<class name="debug test" code="cDbT" description="A structure for running automated tests.">
+			<cocoa class="ASDebugTest"/>
+			<property name="name" code="pnam" description="The name of the test." type="text" access="r"/>
+			<property name="status" code="TsSt" description="The status of the test." type="debug test status" access="r"/>
+			<property name="duration" code="TsDu" description="The duration of the test (in ticks)." type="integer" access="r"/>
+			<responds-to command="run">
+				<cocoa method="handleRunCommand:"/>
+			</responds-to>
+			<responds-to command="close">
+				<cocoa method="handleCloseCommand:"/>
+			</responds-to>
+		</class>
+		<class-extension description="Extension of contact class for debugging purposes." extends="contact">
+			<responds-to command="get specific image">
+				<cocoa method="handleGetSpecificImageCommand:"/>
+			</responds-to>
+			<responds-to command="set specific image">
+				<cocoa method="handleSetSpecificImageCommand:"/>
+			</responds-to>
+		</class-extension>
+		<class name="unit test" code="cUTt" description="A structure for running unit tests.">
+			<cocoa class="ASUnitTest"/>
+			<property name="name" code="pnam" type="text"/>
+			<property name="status" code="cUSt" description="The status of the test." type="unit test status" access="r"/>
+			<responds-to command="run">
+				<cocoa method="handleRunCommand:"/>
+			</responds-to>
+		</class>
+		<class name="imap folder" code="fldR" description="A folder of an IMAP account" inherits="item">
+			<cocoa class="ASImapFolderRec"/>
+			<property name="name" code="pnam" description="The name of the IMAP folder" type="text" access="r"/>
+			<property name="subscribed" code="Scrb" description="Whether or not this IMAP folder is subscribed" type="boolean">
+				<cocoa key="isSubscribed"/>
+			</property>
+			<property name="id" code="ID  " description="The ID of the imap folder (this is the same as its path)" type="text" access="r">
+				<cocoa key="path"/>
+			</property>
+		</class>
+		<class-extension description="Extension of imap account class for debugging purposes." extends="imap account">
+			<element description="The IMAP folders of an IMAP account" type="imap folder" access="r"/>
+		</class-extension>
+		<command name="get specific image" code="GetCImag" description="Gets a contact image from a specified source">
+			<direct-parameter description="The contact whose image you want" type="contact"/>
+			<parameter name="for source" code="sour" description="The source of the image you want to get" type="image source">
+				<cocoa key="source"/>
+			</parameter>
+			<result description="The image of that contact">
+				<type type="image"/>
+				<type type="missing value"/>
+			</result>
+		</command>
+		<command name="set specific image" code="SetCImag" description="Set the contact image with a specific source">
+			<direct-parameter description="The contact whose image you want to set" type="contact"/>
+			<parameter name="to image" code="pict" description="The image you want to set">
+				<cocoa key="image"/>
+				<type type="image"/>
+				<type type="missing value"/>
+			</parameter>
+			<parameter name="for source" code="sour" description="The source of the image to use when setting" type="image source">
+				<cocoa key="source"/>
+			</parameter>
+		</command>
+	</suite>
+</dictionary>
